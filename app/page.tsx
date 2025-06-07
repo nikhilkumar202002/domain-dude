@@ -1,7 +1,15 @@
-import Image from "next/image";
+
+import Header from "./components/ui/Header";
+import "@fontsource/raleway"; 
+import "@fontsource/raleway/400.css"; 
+import "@fontsource/raleway/400-italic.css"; 
+import Footer from "./components/ui/Footer";
 
 export default function Home() {
   return (
-    <div><h1>Hello World</h1></div>
+    <>
+      <Header/>
+      <Footer/>
+    </>
   );
 }

@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root{
+    --btn-color: #3f2fee;
+}
+
+.main-logo{
+    width: 160px;
+}
+.header-menu-list li a{
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+.header-menu-list li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust spacing */
+    width: 0%;
+    height: 1.5px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.header-menu-list li a:hover::after {
+  width: 100%;
+}
+.header-btn{
+    background-color: var(--btn-color);
+    padding: 1rem 1.75rem;
+    font-family: "Raleway";
+    color: white;
+    font-weight: 600;
+}
+.header-btn-icon{
+    font-size: 20px;
+}
+
+.header-btn:hover{
+    background-color: black;
+    transition: 500ms;
+}
+.header-service-arrow{
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+    padding: 2px;
+    font-size: 12px;
+}
+.header-mobile-btn{
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--btn-color);
+    padding: 8px 20px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: background-color 0.5s ease;
+    white-space: nowrap; /* prevents line breaks */
+}
+.header-mobile-btn:hover{
+    background-color: black;
+    transition: 500ms;
+}
+
+@media (max-width: 780px) {
+    .nav-header{
+        padding: 20px 16px 20px 16px;
+    }
+    .header-menu-list{
+        display: none !important;
+    }
+    .header-btn{
+        display: none;
+    }
+    .header-mobile-btn{
+        display: block;
+    }
+}
+
+
