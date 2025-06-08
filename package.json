@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/dm-sans": "^5.2.6",
     "@fontsource/raleway": "^5.2.5",
     "@radix-ui/themes": "^3.2.1",
     "@react-icons/all-files": "^4.1.0",

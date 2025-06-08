@@ -13,56 +13,55 @@ const Header = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between w-full px-5 md:px-12 lg:px-24 h-[90px] bg-white z-50">
-        <div className="flex items-center gap-4">
-          <Link href="/">
-            <Image src="/LOGO.png" alt="Domain Dude Logo" width={130} height={30} />
-          </Link>
-
-        <ul className="header-menu-list hidden md:flex items-center gap-8 px-20">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/company">Company</Link></li>
-          <li className="group">
-            <Link href="/services" className="flex items-center gap-1">
-              Service
-              <span className="header-service-arrow transition-transform duration-300 group-hover:rotate-180">
-                <MdArrowOutward />
-              </span>
+      <nav className="bg-white z-50 h-[90px] w-full">
+        <div className="container mx-auto flex items-center justify-between h-full px-5 md:px-12 lg:px-24">
+          <div className="flex items-center gap-4">
+            <Link href="/">
+              <Image src="/LOGO.png" alt="Domain Dude Logo" width={130} height={30} />
             </Link>
-          </li>
-          <li><Link href="/portfolio">Portfolio</Link></li>
-          <li><Link href="/case-studies">Case Studies</Link></li>
-        </ul>
-        </div>
 
+            <ul className="header-menu-list hidden md:flex items-center gap-8 px-20">
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/company">Company</Link></li>
+              <li className="group">
+                <Link href="/services" className="flex items-center gap-1">
+                  Service
+                  <span className="header-service-arrow transition-transform duration-300 group-hover:rotate-180">
+                    <MdArrowOutward />
+                  </span>
+                </Link>
+              </li>
+              <li><Link href="/portfolio">Portfolio</Link></li>
+              <li><Link href="/case-studies">Case Studies</Link></li>
+            </ul>
+          </div>
 
-        <div className="flex items-center gap-3">
-          <div className='header-login-signup flex gap-3'>
+          <div className="flex items-center gap-3">
+            <div className='header-login-signup flex gap-3'>
               <Button className="header-btn header-signup hidden md:flex rounded-full items-center gap-2">
                 Sign Up
                 <span>
-               <MdArrowOutward />
-            </span>
+                  <MdArrowOutward />
+                </span>
               </Button>
 
               <Button className="header-btn hidden md:flex rounded-full items-center gap-2">
                 Login
                 <span>
-               <MdArrowOutward />
-            </span>
+                  <MdArrowOutward />
+                </span>
               </Button>
-          </div>
-        
+            </div>
 
-          {/* Mobile only */}
-        <Button
-            className="header-mobile-btn flex md:hidden rounded-full items-center gap-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            {/* Mobile only */}
+            <Button
+              className="header-mobile-btn flex md:hidden rounded-full items-center gap-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-            Menu
-            <span className="leading-none"><TbMenuDeep /></span>
-        </Button>
-
+              Menu
+              <span className="leading-none"><TbMenuDeep /></span>
+            </Button>
+          </div>
         </div>
       </nav>
 

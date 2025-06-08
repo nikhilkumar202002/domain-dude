@@ -1,0 +1,36 @@
+
+.home-banner{
+    padding: 100px 0px;
+}
+.home-banner-heading{
+    font-size: 58px;
+    font-family: "DM Sans";
+    font-weight: 800;
+    line-height: 68px;
+    text-transform: capitalize;
+}
+.bounce {
+  animation: bounce 0.5s ease;
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.keyword-span {
+  background-image: linear-gradient(
+    to right,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #b465da 0%,
+    #cf6cc9 33%,
+    #ee609c 66%,
+    #ee609c 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
