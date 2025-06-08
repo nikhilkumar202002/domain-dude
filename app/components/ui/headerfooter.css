@@ -69,6 +69,14 @@
     background-color: black;
     transition: 500ms;
 }
+.header-signup{
+    background-color: white;
+    color: black !important;
+}
+.header-signup:hover{
+    background-color: var(--btn-color);
+    color: white !important;
+}
 
 @media (max-width: 780px) {
     .nav-header{
@@ -83,6 +91,7 @@
     .header-mobile-btn{
         display: block;
     }
+
 }
 
 
@@ -151,7 +160,6 @@
 .footer-subscribe{
     padding: 50px;
     background: rgba( 255, 255, 255, 0.20 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.25 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 30px;
@@ -170,7 +178,7 @@
 }
 
 .footer-logo img{
-    width: 120px;
+    width: 190px;
 }
 .footer-menu-container{
     padding-top: 50px;
@@ -204,4 +212,16 @@
     display: inline-block;
     padding: 10px;
     color: rgb(179, 179, 179);
+}
+.footer-copyright-content p span{
+    font-size: 16px;
+}
+.footer-copyright-content p{
+    font-size: 14px;
+    font-family: "Raleway";
+}
+.footer-copyright-container{
+    border-top: 1px solid rgba(124, 124, 124, 0.575);
+    padding-top: 10px;
+    margin-top: 20px;
 }

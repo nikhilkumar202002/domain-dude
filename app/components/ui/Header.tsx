@@ -37,12 +37,22 @@ const Header = () => {
 
 
         <div className="flex items-center gap-3">
-          <Button className="header-btn hidden md:flex rounded-full items-center gap-2">
-            Contact Us
-            <span>
-              <MdArrowOutward />
+          <div className='header-login-signup flex gap-3'>
+              <Button className="header-btn header-signup hidden md:flex rounded-full items-center gap-2">
+                Sign Up
+                <span>
+               <MdArrowOutward />
             </span>
-          </Button>
+              </Button>
+
+              <Button className="header-btn hidden md:flex rounded-full items-center gap-2">
+                Login
+                <span>
+               <MdArrowOutward />
+            </span>
+              </Button>
+          </div>
+        
 
           {/* Mobile only */}
         <Button
