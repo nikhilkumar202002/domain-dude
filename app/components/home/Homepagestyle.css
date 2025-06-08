@@ -1,6 +1,8 @@
-
+:root{
+    --btn-color: #3f2fee;
+}
 .home-banner{
-    padding: 100px 0px;
+    padding: 80px 0px;
 }
 .home-banner-heading{
     font-size: 58px;
@@ -33,4 +35,118 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+}
+
+.hero-banner-btn-one{
+    padding: 1rem 1.5rem;
+    font-size: 18px;
+    font-family: "Raleway";
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: var(--btn-color);
+    color: white;
+    transition: ease-in 500ms;
+}
+.hero-banner-btn-one:hover{
+    background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+}
+.hero-banner-btn-two{
+    padding: 1rem 1.5rem;
+    font-size: 18px;
+    font-family: "Raleway";
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    transition: ease-in 500ms;
+}
+.hero-banner-btn-two:hover{
+    background-color: black !important;
+    color: white !important;
+}
+.home-banner-trustpartner p{
+    font-size: 22px;
+    font-family: "DM Sans";
+    font-weight: 500;
+    padding-right: 10px;
+    span{
+        font-weight: 700;
+    }
+}
+.home-banner-social-list{
+    list-style: none;
+    padding: 0;
+}
+.home-banner-social{
+    border-left: 1px solid rgb(161, 161, 161);
+    padding-left: 10px;
+}
+.home-banner-social li{
+    display: inline-flex;
+    padding-right: 8px;
+    
+}
+.home-banner-social li a{
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 30px;
+}
+.home-banner-trustpartner{
+    padding-top: 30px;
+}
+.home-banner-social li a:hover{
+    background-color: var(--btn-color);
+    color: white;
+    border: 1px solid var(--btn-color);
+    transition: all ease-in 300ms;
+}
+.hero-banner-description{
+    width: 100%;
+}
+.hero-banner-description p{
+    font-size: 16px;
+    font-family: "Raleway";
+    font-weight: 600;
+}
+.hero-review-profile{
+    display: flex;
+}
+.avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 2px solid var(--btn-color);
+      object-fit: cover;
+      margin-left: -15px;
+}
+.hero-banner-review-card{
+    border-right: 1px solid rgb(134, 134, 134);
+    padding-right: 20px;
+}
+.avatar:first-child {
+      margin-left: 0;
+}
+.hero-review-content p{
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "DM sans";
+    line-height: 14px;
+}
+.google-reviews-content{
+    font-size: 14px;
+    font-family: "DM sans";
+    font-weight: 600;
+    color: black;
+    line-height: 16px;
+}
+.hero-banner-googlereview{
+    padding-left: 20px;
+}
+.hero-banner-googlereview svg{
+    width: 35px;
+}
+.hero-banner-reviews-container{
+    padding-top: 30px;
 }
