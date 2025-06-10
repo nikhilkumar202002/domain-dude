@@ -40,7 +40,7 @@ const HeroSection = () => {
                             <h1 className='home-banner-heading'>Global digital marketing<br></br>agency your creative<br></br>partner for <span 
                             className={`keyword-span ${bounce ? 'bounce' : ''}`}>{keywords[currentKeyword]}</span></h1>
                         </div>
-                        <div className="home-banner-btns flex gap-3 mt-10">
+                        <div className="home-banner-btns flex flex-wrap gap-3 mt-10">
                             <Button className='hero-banner-btn-one flex items-center gap-2'>Request a Strategy Call<span><MdArrowOutward/></span></Button>
                             <Button className='hero-banner-btn-two flex items-center gap-2'>Explore Our Services<span><MdArrowOutward/></span></Button>
                         </div>
