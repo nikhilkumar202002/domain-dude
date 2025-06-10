@@ -35,7 +35,7 @@ const HeroSection = () => {
         <section className='home-banner'>
             <Container.Slot className="container mx-auto h-full px-5 md:px-12 lg:px-24">
                 <div className="hero-flex-container flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
-                    <div className="home-container w-full lg:w-[60%">
+                    <div className="home-container w-full lg:w-[60%]">
                         <div className="home-banner-content">
                             <h1 className='home-banner-heading'>Global digital marketing<br></br>agency your creative<br></br>partner for <span 
                             className={`keyword-span ${bounce ? 'bounce' : ''}`}>{keywords[currentKeyword]}</span></h1>

@@ -152,6 +152,35 @@
 .hero-banner-reviews-container{
     padding-top: 30px;
 }
+.about-heading-content h1{
+    font-size: 60px;
+    font-family: "Dm Sans";
+    color: black;
+    line-height: 78px;
+    font-weight: 500;
+}
+.about-heading-content-bold{
+    font-weight: 600;
+    text-transform: capitalize;
+    
+}
+.about-section{
+    padding: 100px 0px;
+}
+.about-sentence-image{
+    display: inline-block; 
+    vertical-align: middle; 
+    margin: 0 8px; 
+    line-height: 0;
+}
+.about-sentence-image img {
+    width: 120px;
+    height: 80px;
+    border-radius: 50px;
+    border: 5px solid var(--btn-color);
+    object-fit: cover; 
+    display: block;
+}
 
 @media (max-width:780px) {
     .home-banner-heading{
