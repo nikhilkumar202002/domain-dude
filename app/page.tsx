@@ -7,11 +7,13 @@ import "@fontsource/dm-sans";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/400-italic.css"; 
 import HeroSection from "./components/home/HeroSection";
+import MarqueeSlider from "./components/home/MarqueeSlider";
 
 export default function Home() {
   return (
     <>
         <HeroSection/>
+        <MarqueeSlider/>
     </>
   );
 }

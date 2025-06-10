@@ -70,6 +70,7 @@
     font-family: "DM Sans";
     font-weight: 500;
     padding-right: 10px;
+    color: rgb(143, 143, 143);
     span{
         font-weight: 700;
     }
@@ -88,10 +89,11 @@
     
 }
 .home-banner-social li a{
-    border: 1px solid black;
+    border: 1px solid rgb(143, 143, 143);
     font-size: 15px;
     padding: 5px;
     border-radius: 30px;
+    color: rgb(143, 143, 143);
 }
 .home-banner-trustpartner{
     padding-top: 30px;

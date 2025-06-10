@@ -13,6 +13,7 @@
     "@fontsource/raleway": "^5.2.5",
     "@radix-ui/themes": "^3.2.1",
     "@react-icons/all-files": "^4.1.0",
+    "gsap": "^3.13.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
