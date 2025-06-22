@@ -3,7 +3,7 @@
     --border: #DDDDDD;
 }
 .home-banner{
-    padding: 80px 0px;
+    padding: 130px 0px;
 }
 .home-banner-heading{
     font-size: 58px;
@@ -169,7 +169,7 @@
     
 }
 .about-section{
-    padding: 100px 0px;
+    padding: 0px 0px 100px;
 }
 .about-sentence-image{
     display: inline-block; 
