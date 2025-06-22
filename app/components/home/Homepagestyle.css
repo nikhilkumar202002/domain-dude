@@ -305,6 +305,27 @@
 .show-overflow {
   overflow: visible;
 }
+
+/* Technology section */
+
+.tech-container-heading{
+    h4{
+        font-size: 20px;
+        font-family: "Dm Sans";
+        font-weight: 500;
+        color: #a8a8a8;
+    }
+    h1{
+        font-size: 50px;
+        font-family: "Dm Sans";
+        font-weight: 600;
+        color: #1e1e1e;
+        line-height: 60px;
+    }
+}
+.tech-main-hero{
+    padding-bottom: 100px;
+}
 @media (max-width:780px) {
     .home-banner-heading{
         font-size: 30px;
@@ -315,6 +336,12 @@
     }
     .home-banner-expertise p{
         font-size: 16px;
+    }
+    .tech-container-heading{
+        h1{
+            font-size: 35px;
+            line-height: 43px;
+        }
     }
 }
 @media (max-width: 1200px) {
