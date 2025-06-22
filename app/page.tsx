@@ -12,15 +12,19 @@ import AboutSection from "./components/home/AboutSection";
 import ServiceSection from "./components/home/ServiceSection";
 
 import PortfolioAccordian from "./components/home/PortfolioAccordian";
+import HeroVideo from "./components/home/HeroVideo";
+// import BentoGrid from "./components/home/BentoGrid";
 
 export default function Home() {
   return (
     <>
         <HeroSection/>
+        <HeroVideo/>
         {/* <MarqueeSlider/> */}
         <AboutSection/>
         <ServiceSection/>
         <PortfolioAccordian/>
+        {/* <BentoGrid/> */}
     </>
   );
 }
