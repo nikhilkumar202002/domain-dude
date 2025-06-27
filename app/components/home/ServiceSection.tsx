@@ -7,7 +7,6 @@ import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import Link from 'next/link';
 import { BsArrowReturnRight } from "react-icons/bs";
 import { GoArrowUpRight } from "react-icons/go";
-import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';

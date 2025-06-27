@@ -10,6 +10,7 @@ import "./Homepagestyle.css"
 import { Button } from '@radix-ui/themes';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
 
@@ -36,16 +37,36 @@ const HeroSection = () => {
         <section className='home-banner'>
             <Container.Slot className="container mx-auto h-full px-5 md:px-12 lg:px-24">
                 <div className="hero-flex-container flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
-                    <div className="home-container w-full lg:w-[60%]">
-                        <div className="home-banner-content">
+                    <motion.div
+                            className="home-container w-full lg:w-[60%]"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                            >
+                         <motion.div
+                                className="home-banner-content"
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1, delay: 0.8 }}
+                            >
                             <h1 className='home-banner-heading'>Global digital marketing<br></br>agency your creative<br></br>partner for <span 
                             className={`keyword-span ${bounce ? 'bounce' : ''}`}>{keywords[currentKeyword]}</span></h1>
-                        </div>
-                        <div className="home-banner-btns flex flex-wrap gap-3 mt-10">
+                        </motion.div>
+                        <motion.div
+                                className="home-banner-btns flex flex-wrap gap-3 mt-10"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, delay: 1.1 }}
+                            >
                             <Button className='hero-banner-btn-one flex items-center gap-2'>Request a Strategy Call<span><MdArrowOutward/></span></Button>
                             <Button className='hero-banner-btn-two flex items-center gap-2'>Explore Our Services<span><MdArrowOutward/></span></Button>
-                        </div>
-                        <div className="home-banner-trustpartner flex items-center">
+                        </motion.div>
+                        <motion.div
+                                className="home-banner-trustpartner flex items-center"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, delay: 1.4 }}
+                            >
                             <div className="home-banner-expertise">
                             <p><span><CountUp end={12} duration={2} />+</span> Years of Expertise.</p>
                             </div>
@@ -57,8 +78,8 @@ const HeroSection = () => {
                                     <li><Link href=""><FaBehance /></Link></li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
 
                     <div className="hero-banner-review w-full lg:w-[40%]">
                         <div className="hero-banner-description">
