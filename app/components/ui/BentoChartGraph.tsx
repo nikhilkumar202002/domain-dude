@@ -51,8 +51,7 @@ export default function GradientChart() {
                   <circle cx={cx} cy={cy} r={5} fill="white" stroke="#FFA500" strokeWidth={2} />
                   <foreignObject x={cx - 30} y={cy - 40} width={60} height={30}>
                     <div
-                      className="text-xs bg-gray-700 text-white px-2 py-1 rounded shadow text-center"
-                      xmlns="http://www.w3.org/1999/xhtml"
+                      className="text-xs bg-gray-700 text-white px-2 py-1 rounded shadow text-center" xmlns="http://www.w3.org/1999/xhtml"
                     >
                       Before
                     </div>

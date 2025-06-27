@@ -3,7 +3,6 @@
 import 'swiper/css';
 import Image from 'next/image';
 import './TechSlider.css'
-import { useRef } from 'react';
 
 const images = [
     '/tech/ADOBECREATIVESUITE.png',
@@ -20,7 +19,7 @@ const images = [
 
 const TechSlider = () => {
 
-    const sliderRef = useRef<HTMLDivElement>(null);
+    // const sliderRef = useRef<HTMLDivElement>(null);
 
     return (
         <>

@@ -7,6 +7,7 @@ import './headerfooter.css';
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { MdCopyright } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -51,7 +52,7 @@ const Footer = () => {
             </div>
             <div className="footer-menu-container grid grid-cols-12 gap-8 mt-12">
               <div className="footer-logo col-span-12 md:col-span-6">
-                <img src="/LOGO-WHITE.png" alt="Domain Dude Logo" />
+                <Image src="/LOGO-WHITE.png" width={190} height={0} alt="Domain Dude Logo" />
                 <p className='footer-about-content'>Domain Dude delivers innovative web, design, and marketing solutions that help brands grow, engage, and stand out in the digital world.</p>
                 <div className="footer-social-icons">
                   <h1>Follow Us On</h1>

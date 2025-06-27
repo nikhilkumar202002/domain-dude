@@ -7,12 +7,11 @@ import "@fontsource/dm-sans";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/400-italic.css"; 
 import HeroSection from "./components/home/HeroSection";
-// import MarqueeSlider from "./components/home/MarqueeSlider";
-import AboutSection from "./components/home/AboutSection";
+// import AboutSection from "./components/home/AboutSection"; 
 import ServiceSection from "./components/home/ServiceSection";
-
 import PortfolioAccordian from "./components/home/PortfolioAccordian";
 import HeroVideo from "./components/home/HeroVideo";
+import PricingPlan from "./components/home/PricingPlan";
 // import BentoGrid from "./components/home/BentoGrid";
 
 export default function Home() {
@@ -20,11 +19,11 @@ export default function Home() {
     <>
         <HeroSection/>
         <HeroVideo/>
-        {/* <MarqueeSlider/> */}
-        <AboutSection/>
+        {/* <AboutSection/> */}
         <ServiceSection/>
         <PortfolioAccordian/>
         {/* <BentoGrid/> */}
+        <PricingPlan/>
     </>
   );
 }

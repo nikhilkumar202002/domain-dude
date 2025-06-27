@@ -2,6 +2,7 @@ import React from 'react';
 import "./BentoGrid.css";
 import * as Container from '@radix-ui/react-slot';
 import BentoChartGraph from '../ui/BentoChartGraph';
+import Image from 'next/image';
 
 
 const BentoGrid = () => {
@@ -39,14 +40,14 @@ const BentoGrid = () => {
                             </h3>
                             <div className="flex items-center mt-4">
                                 <div className="flex -space-x-2">
-                                <img className="w-8 h-8 rounded-full border-2 border-black" src="/path/to/user1.jpg" />
-                                <img className="w-8 h-8 rounded-full border-2 border-black" src="/path/to/user2.jpg" />
-                                <img className="w-8 h-8 rounded-full border-2 border-black" src="/path/to/user3.jpg" />
+                                <Image className="w-8 h-8 rounded-full border-2 border-black" alt="description" src="/path/to/user1.jpg" />
+                                <Image className="w-8 h-8 rounded-full border-2 border-black" alt="description" src="/path/to/user2.jpg" />
+                                <Image className="w-8 h-8 rounded-full border-2 border-black"  alt="description" src="/path/to/user3.jpg" />
                                 </div>
                                 <span className="ml-3 text-sm text-gray-300">98% Client Success Rate</span>
                             </div>
                             </div>
-                            <img src="/path/to/zen-stone.png" alt="Zen Stone" className="mt-6" />
+                            <Image src="/path/to/zen-stone.png" alt="Zen Stone" className="mt-6" />
                         </div>
 
                         <div className="bento-grid-cards rounded-2xl p-6 text-white col-span-1">

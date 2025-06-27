@@ -9,6 +9,7 @@ import CountUp from 'react-countup';
 import "./Homepagestyle.css"
 import { Button } from '@radix-ui/themes';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const HeroSection = () => {
 
@@ -66,9 +67,9 @@ const HeroSection = () => {
                         <div className="hero-banner-reviews-container flex items-center">
                             <div className="hero-banner-review-card flex items-center gap-2">
                                 <div className="hero-review-profile">
-                                    <img src="/avatar-1.jpg" alt="" className='avatar'/>
-                                    <img src="/avatar-2.jpg" alt="" className='avatar'/>
-                                    <img src="/avatar-3.jpg" alt="" className='avatar'/>
+                                    <Image src="/avatar-1.jpg" width={35} height={35} alt="Avatar" className='avatar'/>
+                                    <Image src="/avatar-2.jpg" width={35} height={35} alt="Avatar" className='avatar'/>
+                                    <Image src="/avatar-3.jpg" width={35} height={35} alt="Avatar" className='avatar'/>
                                 </div>
                                 <div className="hero-review-content">
                                     <p><span><CountUp end={50} duration={2} />+</span>Trusted<br></br> Partners.</p>

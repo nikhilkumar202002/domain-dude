@@ -19,15 +19,15 @@ if (typeof window !== 'undefined') {
 }
 
 const ServiceSection = () => {
-   const wrapperRef = useRef(null);
-  const loopRef = useRef(null);
-  const intervalRef = useRef(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const loopRef = useRef<gsap.core.Timeline | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const serviceCards = gsap.utils.toArray(".service-card");
-    
+    const serviceCards = gsap.utils.toArray(".service-card") as HTMLElement[];
+
     // Calculate the width of 4 cards plus gaps
     const cardWidth = serviceCards[0]?.offsetWidth || 300;
     const cardGap = 20;
@@ -41,7 +41,7 @@ const ServiceSection = () => {
       speed: 1,
       center: false,
       snap: 1 / (serviceCards.length / 4), // Snap to groups of 4
-      onChange: (item, index) => {
+      onChange: (item: HTMLElement, index: number) => {
         // Optional: handle change event
       }
     });
@@ -51,35 +51,41 @@ const ServiceSection = () => {
     // Auto-play interval
     const startAutoPlay = () => {
       intervalRef.current = setInterval(() => {
-        loop.next({ duration: 5, ease: "power1.inOut" });
+        loopRef.current?.next({ duration: 5, ease: "power1.inOut" });
       }, 5000);
     };
 
     startAutoPlay();
 
-    // Pause on hover
     const wrapper = wrapperRef.current;
+
     const pauseOnHover = () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
     };
+
     const resumeOnLeave = () => {
       if (!intervalRef.current) {
         startAutoPlay();
       }
     };
 
-    wrapper.addEventListener('mouseenter', pauseOnHover);
-    wrapper.addEventListener('mouseleave', resumeOnLeave);
+    if (wrapper) {
+      wrapper.addEventListener('mouseenter', pauseOnHover);
+      wrapper.addEventListener('mouseleave', resumeOnLeave);
+    }
 
-    // Clean up
     return () => {
-      clearInterval(intervalRef.current);
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+      }
       loop.kill();
-      wrapper.removeEventListener('mouseenter', pauseOnHover);
-      wrapper.removeEventListener('mouseleave', resumeOnLeave);
+      if (wrapper) {
+        wrapper.removeEventListener('mouseenter', pauseOnHover);
+        wrapper.removeEventListener('mouseleave', resumeOnLeave);
+      }
     };
   }, []);
 
@@ -117,14 +123,27 @@ const ServiceSection = () => {
   };
 
   // Horizontal loop function (same as before)
-  function horizontalLoop(items, config) {
+  function horizontalLoop(
+    items: HTMLElement[],
+    config: {
+      paused?: boolean;
+      paddingRight?: number;
+      draggable?: boolean;
+      speed?: number;
+      center?: boolean | string | HTMLElement;
+      snap?: boolean | number | ((value: number) => number);
+      repeat?: number;
+      reversed?: boolean;
+      onChange?: (item: HTMLElement, index: number) => void;
+    } = {}
+  ): gsap.core.Timeline {
     items = gsap.utils.toArray(items);
     config = config || {};
     let onChange = config.onChange,
       lastIndex = 0,
       tl = gsap.timeline({
         repeat: config.repeat,
-        onUpdate: onChange && function() {
+        onUpdate: onChange && function () {
           let i = tl.closestIndex();
           if (lastIndex !== i) {
             lastIndex = i;
@@ -133,22 +152,31 @@ const ServiceSection = () => {
         },
         paused: config.paused,
         defaults: { ease: "none" },
-        onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
+        onReverseComplete: () => {
+          tl.totalTime(tl.rawTime() + tl.duration() * 100);
+        }
       }),
       length = items.length,
-      startX = items[0].offsetLeft,
-      times = [],
-      widths = [],
-      spaceBefore = [],
-      xPercents = [],
+      startX = items[0]?.offsetLeft || 0,
+      times: number[] = [],
+      widths: number[] = [],
+      spaceBefore: number[] = [],
+      xPercents: number[] = [],
       curIndex = 0,
       indexIsDirty = false,
       center = config.center,
       pixelsPerSecond = (config.speed || 1) * 100,
-      snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1),
+        snap =
+          config.snap === false
+            ? (v: number) => v
+            : gsap.utils.snap(
+                typeof config.snap === "number" || typeof config.snap === "function"
+                  ? config.snap
+                  : 1
+              ),
       timeOffset = 0,
-      container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,
-      totalWidth,
+      container = center === true ? items[0].parentNode as HTMLElement : gsap.utils.toArray(center)[0] as HTMLElement || items[0].parentNode as HTMLElement,
+      totalWidth: number,
       getTotalWidth = () => items[length - 1].offsetLeft + (xPercents[length - 1] / 100) * widths[length - 1] - startX + spaceBefore[0] + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0),
       populateWidths = () => {
         let b1 = container.getBoundingClientRect(),
@@ -205,19 +233,19 @@ const ServiceSection = () => {
             },
             0
           )
-          .fromTo(
-            item,
-            {
-              xPercent: snap(((curX - distanceToLoop + totalWidth) / widths[i]) * 100)
-            },
-            {
-              xPercent: xPercents[i],
-              duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
-              immediateRender: false
-            },
-            distanceToLoop / pixelsPerSecond
-          )
-          .add("label" + i, distanceToStart / pixelsPerSecond);
+            .fromTo(
+              item,
+              {
+                xPercent: snap(((curX - distanceToLoop + totalWidth) / widths[i]) * 100)
+              },
+              {
+                xPercent: xPercents[i],
+                duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
+                immediateRender: false
+              },
+              distanceToLoop / pixelsPerSecond
+            )
+            .add("label" + i, distanceToStart / pixelsPerSecond);
           times[i] = distanceToStart / pixelsPerSecond;
         }
         timeWrap = gsap.utils.wrap(0, tl.duration());
@@ -231,13 +259,13 @@ const ServiceSection = () => {
         deep && tl.draggable ? tl.time(times[curIndex], true) : tl.progress(progress, true);
       },
       proxy;
-    
+
     gsap.set(items, { x: 0 });
     populateWidths();
     populateTimeline();
     populateOffsets();
     window.addEventListener("resize", () => refresh(true));
-    
+
     function toIndex(index, vars) {
       vars = vars || {};
       Math.abs(index - curIndex) > length / 2 && (index += index > curIndex ? -length : length);
@@ -254,7 +282,7 @@ const ServiceSection = () => {
       gsap.killTweensOf(proxy);
       return vars.duration === 0 ? tl.time(timeWrap(time)) : tl.tweenTo(time, vars);
     }
-    
+
     tl.toIndex = (index, vars) => toIndex(index, vars);
     tl.closestIndex = (setCurrent) => {
       let index = getClosest(times, tl.time(), tl.duration());
@@ -269,12 +297,12 @@ const ServiceSection = () => {
     tl.previous = (vars) => toIndex(tl.current() - 1, vars);
     tl.times = times;
     tl.progress(1, true).progress(0, true);
-    
+
     if (config.reversed) {
       tl.vars.onReverseComplete();
       tl.reverse();
     }
-    
+
     if (config.draggable && typeof Draggable === "function") {
       proxy = document.createElement("div");
       let wrap = gsap.utils.wrap(0, 1),
@@ -286,7 +314,7 @@ const ServiceSection = () => {
         initChangeX,
         align = () => tl.progress(wrap(startProgress + (draggable.startX - draggable.x) * ratio)),
         syncIndex = () => tl.closestIndex(true);
-      
+
       draggable = Draggable.create(proxy, {
         trigger: items[0].parentNode,
         type: "x",
@@ -323,7 +351,7 @@ const ServiceSection = () => {
       })[0];
       tl.draggable = draggable;
     }
-    
+
     tl.closestIndex(true);
     lastIndex = curIndex;
     onChange && onChange(items[curIndex], curIndex);

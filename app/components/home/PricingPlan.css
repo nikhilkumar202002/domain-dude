@@ -1,0 +1,120 @@
+:root{
+    --btn-color: #3f2fee;
+    --border: #DDDDDD;
+}
+.pricing-plan-section{
+    padding-bottom: 100px;
+}
+.pricing-plan-card{
+    padding: 30px;
+    border: 1px solid #cccccc;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+.price-card-header{
+    text-align: center;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    h5{
+        font-size: 16px;
+        font-family: "Raleway";
+        font-weight: 600;
+    }
+    h1{
+        font-size: 35px;
+        font-family: "DM Sans";
+        font-weight: 700;
+        color: var(--btn-color);
+    }
+    p{
+        font-size: 13px;
+        font-family: "Raleway";
+        font-weight: 500;
+    }
+}
+.plan-price-icon{
+    font-size: 22px;
+}
+.price-month-bar{
+    font-size: 18px;
+    color: #1e1e1e !important;
+}
+.price-card-details{
+    background-color: white;
+    padding: 30px;
+    border-radius: 18px;
+}
+.price-card-btn{
+    padding: 10px 30px;
+    border-radius: 40px;
+    background-color: var(--btn-color);
+    color: white;
+    font-family: "Raleway";
+    font-weight: 600;
+}
+.price-card-content ul{
+    padding-top: 15px;
+}
+.price-card-content ul li{
+    font-family: "Raleway";
+    font-size: 13px;
+    padding: 4px 0;
+}
+.pricing-plan-card-wrapper{
+    display: flex;
+    gap: 20px;
+}
+.pricing-left-heading h4{
+    font-size: 17px;
+    font-family: "Dm Sans";
+    color: #6a6a6a;
+}
+.pricing-left-heading h1{
+    font-size: 40px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    line-height: 48px;
+}
+.pricing-header{
+    padding-bottom: 30px;
+}
+.standard-plan-btn{
+    width: 180px;
+    justify-content: center;
+}
+.premium-plan-card{
+    background-color: var(--btn-color);
+}
+.premium-plan-header, 
+.premium-plan-icon,
+.premium-plan-header p,
+.premium-plan-header h1,
+.premium-plan-bar {
+    color: white !important;
+}
+.premium-plan-btn{
+    background-color: black;
+}
+.pricing-plan-tab{
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: 600
+}
+.pricing-plan-tab:hover{
+    background-color: black;
+    color: white;
+    transition: 300ms;
+}
+.tab-2{
+    background-color: black;
+    color: white;
+}
+.tab-2:hover{
+    background-color: #3f2fee;
+    transition: 300ms;
+}

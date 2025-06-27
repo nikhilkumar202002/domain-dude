@@ -5,6 +5,7 @@ import './Porfolioaccordian.css';
 import * as Container from '@radix-ui/react-slot';
 import { Button } from '@radix-ui/themes';
 import { MdArrowOutward } from 'react-icons/md';
+import Image from 'next/image';
 
 const portfolios = [
     {
@@ -125,8 +126,10 @@ const PortfolioAccordian = () => {
                                             className={`portfolio-accordian-box-image transition-all duration-700 ease-in-out overflow-hidden ${isActive ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'
                                                 }`}
                                         >
-                                            <img
+                                            <Image
                                                 src={item.image}
+                                                width={1200}
+                                                height={500}
                                                 alt="Portfolio preview"
                                                 className="portfolio-accordian-box-image  shadow-lg w-full object-cover transition-transform duration-700"
                                             />
@@ -149,7 +152,9 @@ const PortfolioAccordian = () => {
                                 height: 'auto',
                             }}
                         >
-                            <img
+                            <Image
+                                width={200}
+                                height={0}
                                 src={hoverImage}
                                 alt="Hover Preview"
                                 className="rounded-lg border border-gray-300 shadow-md"

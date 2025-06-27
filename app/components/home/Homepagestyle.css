@@ -165,11 +165,11 @@
 
 /* about section style */
 
-.about-heading-content h1{
-    font-size: 60px;
+.about-container-header h1{
+    font-size: 40px;
     font-family: "Dm Sans";
     color: black;
-    line-height: 78px;
+    line-height: 50px;
     font-weight: 500;
 }
 .about-heading-content-bold{
@@ -186,6 +186,20 @@
     margin: 0 8px; 
     line-height: 0;
 }
+.about-counter-container{
+    padding: 20px 0px 30px;
+}
+.about-inner-image{
+    width: 100%;
+    height: 700px;
+    border-radius: 30px;
+}
+.about-inner-image img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
 .about-sentence-image img {
     width: 120px;
     height: 80px;
@@ -223,7 +237,7 @@
     padding-bottom: 30px;
 }
 .service-section{
-    padding: 0 0 100px 0;
+    padding: 100px 0 100px 0;
 }
 
 .service-left-heading{
