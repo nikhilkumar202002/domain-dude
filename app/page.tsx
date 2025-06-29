@@ -13,13 +13,14 @@ import PortfolioAccordian from "./components/home/PortfolioAccordian";
 import HeroVideo from "./components/home/HeroVideo";
 import PricingPlan from "./components/home/PricingPlan";
 import CalltoAction from "./components/ui/CalltoAction";
+import MarqueSlider from "./components/ui/MarqueSlider";
 // import BentoGrid from "./components/home/BentoGrid";
 
 export default function Home() {
   return (
     <>
         <HeroSection/>
-        <HeroVideo/>
+        <MarqueSlider/>
         {/* <AboutSection/> */}
         <ServiceSection/>
         <PortfolioAccordian/>

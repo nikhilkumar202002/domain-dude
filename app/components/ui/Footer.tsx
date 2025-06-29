@@ -16,7 +16,7 @@ const Footer = () => {
       <footer className='main-footer py-10 relative'>
         <video
           className="footer-video-bg"
-          src="/footer-bg-video.mp4"
+          src="/Video/call-to-action-video.mp4"
           autoPlay
           loop
           muted

@@ -41,7 +41,7 @@ const HeroSection = () => {
                             className="home-container w-full lg:w-[60%]"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                             >
                          <motion.div
                                 className="home-banner-content"

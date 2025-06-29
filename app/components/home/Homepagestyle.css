@@ -3,7 +3,7 @@
     --border: #DDDDDD;
 }
 .home-banner{
-    padding: 70px 0px;
+    padding: 130px 0px;
 }
 .home-banner-heading{
     font-size: 58px;
@@ -264,6 +264,8 @@
     padding: 30px;
     border: 1px solid var(--border);
     border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 .service-card-heading{
     font-size: 22px;
@@ -271,6 +273,7 @@
     font-family: "Dm Sans";
     font-weight: 600;
     padding-bottom: 80px;
+    transition: transform 0.3s ease;
 }
 .service-card-keywords{
     margin-bottom: 20px;

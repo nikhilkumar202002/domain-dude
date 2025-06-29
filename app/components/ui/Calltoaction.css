@@ -1,0 +1,63 @@
+:root{
+    --btn-color: #3f2fee;
+    --border: #DDDDDD;
+}
+.call-action-content{
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.call-action-heading{
+    font-size: 18px;
+    font-family: "Raleway";
+    font-weight: 550;
+}
+.call-action-description{
+    font-size: 100px;
+    text-transform: uppercase;
+    padding-top: 15px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* or flex-start if you want left-align */
+    padding: 0; /* reset any padding */
+    margin: 0;
+    gap: 1rem;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.call-action-btn{
+    margin-top: 30px;
+    background-color: var(--btn-color);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-family: "Dm Sans";
+    font-weight: 580;
+    font-size: 16px;
+}
+.call-action-btn:hover{
+    background-color: white;
+    color: #1e1e1e;
+    transition: 300ms;
+}
+.call-action-description-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  max-width: 100vw;
+}

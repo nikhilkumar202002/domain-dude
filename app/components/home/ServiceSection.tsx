@@ -1,21 +1,19 @@
-'use client'
+'use client';
 
-import React from 'react'
+import React from 'react';
 import { Button } from '@radix-ui/themes';
-import "./Homepagestyle.css";
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import './Homepagestyle.css';
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
 import Link from 'next/link';
-import { BsArrowReturnRight } from "react-icons/bs";
-import { GoArrowUpRight } from "react-icons/go";
+import { BsArrowReturnRight } from 'react-icons/bs';
+import { GoArrowUpRight } from 'react-icons/go';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { motion } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-
-const ServiceSection = () => {
-
-  const services = [
+const services = [
   {
     title: 'Web Development',
     items: ['Responsive Website Design', 'Custom Web Development', 'E-Commerce Solutions'],
@@ -42,24 +40,57 @@ const ServiceSection = () => {
   },
 ];
 
-
+const ServiceSection = () => {
   return (
-      <section className='service-section'>
-        <div className="container mx-auto h-full px-5 md:px-12 lg:px-24">
-          <div className="serice-container">
-            <div className="service-header flex justify-between items-end">
-              <div className="service-left-heading">
-                <h1>Our Digital Services</h1>
-                <p>Web, design, marketing, and branding solutions to elevate your business online.</p>
-              </div>
-              <div className="service-right-btn">
-                <div className="service-arrow-btns flex gap-3">
-                  <Button className="service-swiper-prev custom-swiper-nav service-arrow-btns"><IoIosArrowRoundBack /></Button>
-                  <Button className="service-swiper-next custom-swiper-nav service-arrow-btns"><IoIosArrowRoundForward /></Button>
-                </div>
+    <motion.section
+      className="service-section"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+    >
+      <div className="container mx-auto h-full px-5 md:px-12 lg:px-24">
+        <div className="serice-container">
+          {/* Heading Animation */}
+          <motion.div
+            className="service-header flex justify-between items-end"
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+            }}
+          >
+            <div className="service-left-heading">
+              <h1>Our Digital Services</h1>
+              <p>
+                Web, design, marketing, and branding solutions to elevate your business online.
+              </p>
+            </div>
+            <div className="service-right-btn">
+              <div className="service-arrow-btns flex gap-3">
+                <Button className="service-swiper-prev custom-swiper-nav service-arrow-btns">
+                  <IoIosArrowRoundBack />
+                </Button>
+                <Button className="service-swiper-next custom-swiper-nav service-arrow-btns">
+                  <IoIosArrowRoundForward />
+                </Button>
               </div>
             </div>
+          </motion.div>
 
+          {/* Swiper Animation */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4, ease: 'easeOut' } },
+            }}
+          >
             <Swiper
               spaceBetween={20}
               slidesPerView={1}
@@ -70,28 +101,44 @@ const ServiceSection = () => {
                 1280: { slidesPerView: 4 },
               }}
               loop={true}
-                navigation={{
-                      nextEl: '.service-swiper-next',
-                      prevEl: '.service-swiper-prev',
-                    }}
-                    modules={[Navigation]}
-                    onSwiper={(swiper) => {
-                      console.log('Swiper instance:', swiper); // You can now access swiper.navigation here
-                    }}
+              navigation={{
+                nextEl: '.service-swiper-next',
+                prevEl: '.service-swiper-prev',
+              }}
+              modules={[Navigation]}
             >
               {services.map((service, index) => (
                 <SwiperSlide key={index}>
                   <div className="service-card">
-                    <h1 className='service-card-heading'>{service.title.split(' ')[0]}<br />{service.title.split(' ')[1]}</h1>
-                    <ul className='service-card-keywords'>
+                    <motion.h1
+                      className="service-card-heading"
+                      variants={{
+                        rest: { y: 0, opacity: 1 },
+                        hover: { y: -5, opacity: 1 },
+                      }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                    >
+                      {service.title.split(' ')[0]}
+                      <br />
+                      {service.title.split(' ')[1]}
+                    </motion.h1>
+
+                    <ul className="service-card-keywords">
                       {service.items.map((item, idx) => (
-                        <li key={idx} className='flex items-center gap-2'>
-                          <span><BsArrowReturnRight /></span>{item}
+                        <li key={idx} className="flex items-center gap-2">
+                          <span>
+                            <BsArrowReturnRight />
+                          </span>
+                          {item}
                         </li>
                       ))}
                     </ul>
+
                     <div className="font-inter flex items-center service-btn-link">
-                      <Link href="/service" className="group flex items-center gap-2 no-underline border-b transition-all duration-300 cursor-pointer relative">
+                      <Link
+                        href="/service"
+                        className="group flex items-center gap-2 no-underline border-b transition-all duration-300 cursor-pointer relative"
+                      >
                         Enquire Now
                         <span className="service-btn-arrow flex items-center rounded-full transition-transform duration-300 group-hover:rotate-45">
                           <GoArrowUpRight />
@@ -102,10 +149,11 @@ const ServiceSection = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
-      </section>
-  )
-}
+      </div>
+    </motion.section>
+  );
+};
 
-export default ServiceSection
+export default ServiceSection;
