@@ -1,0 +1,107 @@
+.empowering-brands{
+    padding: 100px 0 0 0;
+}
+.three-card-header{
+    text-align: center;
+    font-family: "Dm sans";
+    line-height: 45px;
+}
+.three-card-sub-heading{
+    font-size: 20px;
+    font-weight: 500;
+    color: #979797;
+}
+.three-card-heading{
+    font-size: 45px;
+    color: #1e1e1e;
+    font-weight: 600;
+    overflow: hidden;
+    line-height: 0;
+}
+.three-card{
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid #e9e9e9;
+}
+.card-one{
+    background-image: url('/BGimages/mesh-gradient.png');
+    background-size: cover;
+    background-position: center;
+}
+.card-two{
+    background-image: url('/BGimages/mesh-gradient-one.png');
+    background-size: cover;
+    background-position: center;
+}
+.card-three{
+    background-image: url('/BGimages/mesh-gradient-two.png');
+    background-size: cover;
+    background-position: center;
+}
+.three-card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 50px;
+}
+.three-cards-header{
+    text-align: left;
+    padding-bottom: 100px;
+}
+.three-cards-subheading{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Dm Sans";
+    color: #4e4e4e;
+}
+.three-cards-heading{
+    font-size: 25px;
+    font-weight: 700;
+    font-family: "Dm Sans";
+    line-height: 32px;
+    padding-top: 6px;
+    color: #1e1e1e;
+    
+}
+.three-cards-description{
+    font-family: "Raleway";
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+.three-cards-tags{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.tags{
+    padding: 4px 10px;
+    font-family: "Raleway";
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #8a8a8a;
+}
+.card-gradient-text{
+     background: linear-gradient(135deg, #b465da 0%, #cf6cc9 40%, #ee609c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        line-height: 1.2; /* ensure full height */
+        padding: 2px 0;    /* give breathing room */
+        overflow: visible; /* prevent clipping */
+        white-space: nowrap; /* optional: stop wrapping */
+}
+/* Optional bounce effect */
+.bounce {
+  animation: bounceEffect 0.5s ease;
+}
+
+@keyframes bounceEffect {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}

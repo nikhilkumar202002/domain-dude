@@ -325,6 +325,12 @@
     border-radius: 50%;
     font-size: 30px;
 }
+.service-arrow-btns button:hover{
+    background-color: var(--btn-color);
+    transition: 400ms;
+    color: white;
+    border: 1px solid var(--btn-color);
+}
 .show-overflow {
   overflow: visible;
 }

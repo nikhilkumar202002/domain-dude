@@ -10,10 +10,8 @@ import HeroSection from "./components/home/HeroSection";
 // import AboutSection from "./components/home/AboutSection"; 
 import ServiceSection from "./components/home/ServiceSection";
 import PortfolioAccordian from "./components/home/PortfolioAccordian";
-import HeroVideo from "./components/home/HeroVideo";
-import PricingPlan from "./components/home/PricingPlan";
-import CalltoAction from "./components/ui/CalltoAction";
 import MarqueSlider from "./components/ui/MarqueSlider";
+import EmpoweringBrands from "./components/ui/EmpoweringBrands";
 // import BentoGrid from "./components/home/BentoGrid";
 
 export default function Home() {
@@ -21,12 +19,12 @@ export default function Home() {
     <>
         <HeroSection/>
         <MarqueSlider/>
+        <EmpoweringBrands/>
         {/* <AboutSection/> */}
         <ServiceSection/>
         <PortfolioAccordian/>
         {/* <BentoGrid/> */}
-        <PricingPlan/>
-        <CalltoAction/>
+
     </>
   );
 }
