@@ -1,0 +1,27 @@
+.technologies-header{
+    text-align: center;
+    font-family: "Dm sans";
+}
+.technologies-sub-heading{
+    font-size: 18px;
+    font-weight: 600;
+    color: #979797;
+}
+
+.technologies-top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+}
+.technologies-top img{
+    width: 120px;
+    height: 60;
+    object-fit: contain;
+}
+.technologies-icons{
+    padding: 10px 100px 0 100px;
+}
+.technologies-section{
+    padding: 0 0 100px;
+}
