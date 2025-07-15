@@ -26,15 +26,15 @@ const Footer = () => {
         {/* Responsive container */}
         <div className="container mx-auto relative z-10">
           <div className="footer-content w-full px-5 md:px-12 lg:px-24">
-            <div className="footer-subscribe flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
-              {/* Text Content */}
+            {/* <div className="footer-subscribe flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+              
               <div className="footer-subscribe-text text-center md:text-left">
                 <h1 className="footer-subscribe-heading text-white text-2xl md:text-3xl font-semibold mb-2">Join Our Digital Circle!</h1>
                 <p className="footer-subscribe-content text-white text-sm md:text-base">
                   Get the latest updates, tips, and offers. No spam—only value.
                 </p>
               </div>
-              {/* Subscribe Form */}
+           
               <div className="footer-subscribe-form w-full md:w-auto">
                 <form action="" method="post">
                   <div className="footer-fields flex flex-col sm:flex-row items-center gap-3">
@@ -49,7 +49,7 @@ const Footer = () => {
                   </div>
                 </form>
               </div>
-            </div>
+            </div> */}
             <div className="footer-menu-container grid grid-cols-12 gap-8 mt-12">
               <div className="footer-logo col-span-12 md:col-span-6">
                 <Image src="/LOGO-WHITE.png" width={190} height={0} alt="Domain Dude Logo" />

@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 :root{
-    --btn-color: #3f2fee;
+    --btn-color: #FFC800;
+    --primary-color: #003566;
+    --secondary-color: #70ee9c;
+    --heading-color: #0b132b;
+    --black: #1D1616;
 }
 
 .main-logo{
-    width: 160px;
+    width: 100px;
 }
 .header-menu-list li a{
     font-family: "Raleway";
@@ -30,8 +34,8 @@
   width: 100%;
 }
 .header-btn{
-    background-color: var(--btn-color);
-    padding: 1rem 1.75rem;
+    background-color: #FFC800 !important;
+    padding: 12px 32px;
     font-family: "Raleway";
     color: white;
     font-weight: 600;
@@ -41,12 +45,13 @@
 }
 
 .header-btn:hover{
-    background-color: black;
+    background-color: var(--secondary-color);
     transition: 500ms;
+    color: var(--black);
 }
 .header-service-arrow{
-    background-color: black;
-    color: white;
+    background-color: #70EE9C;
+    color: #1D1616;
     border-radius: 100%;
     padding: 2px;
     font-size: 12px;
@@ -66,18 +71,32 @@
     white-space: nowrap; /* prevents line breaks */
 }
 .header-mobile-btn:hover{
-    background-color: black;
+    background-color: #70EE9C !important;
+    color: #1D1616;
     transition: 500ms;
 }
 .header-signup{
-    background-color: white;
+    background-color: white !important;
     color: black !important;
 }
 .header-signup:hover{
-    background-color: var(--btn-color);
+    background-color: var(--primary-color) !important;
     color: white !important;
 }
-
+.header-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.header-social-items{
+    font-size: 20px;
+    color: var(--black);
+}
+.header-social-items:hover{
+    color: var(--secondary-color);
+    transition: all 300ms;
+}
 @media (max-width: 780px) {
     .nav-header{
         padding: 20px 16px 20px 16px;
@@ -182,7 +201,7 @@
     width: 190px;
 }
 .footer-menu-container{
-    padding-top: 50px;
+    padding-top: 0px;
 }
 .footer-about-content{
     font-size: 14px;

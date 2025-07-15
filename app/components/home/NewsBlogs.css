@@ -1,0 +1,65 @@
+.news-blog-heading h4{
+    font-size: 20px;
+    font-family: "Dm Sans";
+    font-weight: 500;
+    color: rgb(135, 135, 135);
+}
+.news-blog-heading h1{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 50px;
+    font-family: "Dm Sans";
+}
+.news-blog-btn button{
+    font-size: 17px;
+    padding: 12px 32px;
+    font-weight: 600;
+    font-family: "Raleway";
+    background-color: #3f2fee;
+    border-radius: 30px;
+    color: white;
+}
+.news-blog-card{
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+    border-radius: 30px;
+    padding: 10px;
+}
+.news-blog-card img{
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.blog-news-content h5{
+    font-size: 13px;
+    font-family: "Dm Sans";
+    font-weight: 500;
+    padding-top: 15px;
+}
+.blog-news-content h1{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Dm Sans";
+    color: #1e1e1e;
+}
+.blog-news-content p{
+    font-weight: 500;
+    font-family: "Raleway";
+}
+.blog-news-content button{
+    padding: 10px 20px;
+    background-color: #3f2fee;
+    border-radius: 30px;
+    color: white;
+    font-family: "Raleway";
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px
+}
+.news-blogs-flex {
+    padding-top: 30px;
+}
+.news-blog{
+    padding-bottom: 100px;
+}

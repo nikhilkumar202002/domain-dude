@@ -7,6 +7,7 @@ import { TbMenuDeep } from "react-icons/tb";
 import Link from 'next/link';
 import Image from 'next/image';
 import './headerfooter.css';
+import { FaInstagram,FaFacebook,FaLinkedin,FaYoutube } from "react-icons/fa";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,11 +17,8 @@ const Header = () => {
       <nav className="bg-white z-50 h-[90px] w-full">
         <div className="container mx-auto flex items-center justify-between h-full px-5 md:px-12 lg:px-24">
           <div className="flex items-center gap-4">
-            <Link href="/">
-              <Image src="/LOGO.png" alt="Domain Dude Logo" width={130} height={30} />
-            </Link>
 
-            <ul className="header-menu-list hidden md:flex items-center gap-8 px-20">
+            <ul className="header-menu-list hidden md:flex items-center gap-8">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/company">Company</Link></li>
               <li className="group">
@@ -34,6 +32,14 @@ const Header = () => {
               <li><Link href="/portfolio">Portfolio</Link></li>
               <li><Link href="/case-studies">Case Studies</Link></li>
             </ul>
+
+         
+          </div>
+
+          <div className="menu-logo">
+             <Link href="/">
+              <Image src="/main-logo.png" alt="Domain Dude Logo" width={80} height={30} />
+            </Link>
           </div>
 
           <div className="flex items-center gap-3">
@@ -52,6 +58,16 @@ const Header = () => {
                 </span>
               </Button>
             </div>
+
+            <div style={{ width: '1px', height: '50px', backgroundColor: '#ccc', margin: '0 20px' }} />
+
+            <div className="header-social">
+              <div className="header-social-items"><FaInstagram /></div>
+              <div className="header-social-items"><FaFacebook /></div>
+              <div className="header-social-items"><FaLinkedin /></div>
+              <div className="header-social-items"><FaYoutube /></div>
+            </div>
+
 
             {/* Mobile only */}
             <Button

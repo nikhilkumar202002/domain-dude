@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root{
+    --btn-color: #FFC800;
+    --primary-color: #003566;
+    --secondary-color: #70ee9c;
+    --heading-color: #0b132b;
+    --black: #1D1616;
+}
+
+.hero-section{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;          /* tweak this to taste */
+  pointer-events: none;   /* clicks pass through */
+  z-index: 50;            /* above background, below your content */
+}
+
+/* top: white → transparent */
+.overlay-top {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,1) 0%,
+    rgba(255, 255, 255, 0.0) 100%
+
+  );
+}
+
+/* bottom: transparent → white */
+.overlay-bottom {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,1) 0%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+}
+.hero-step ul{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--black);
+}
+.hero-step{
+    padding: 8px 25px;
+    border: 1px solid rgba(29, 22, 22, 0.08);
+    border-radius: 30px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(65deg, white,rgba(112, 238, 156, 0.29));
+}
+.hero-content h1{
+    font-family: "DM Sans";
+    font-weight: 600;
+    font-size: 52;
+    line-height: 65px;
+    color: var(--black);
+}
+.hero-btns{
+    margin-top: 30px;
+}
+.hero-content-box{
+ display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center; /* if you want vertical centering within a given height */
+  text-align: center;
+}
+.hero-btns button{
+    font-family: "Raleway";
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 30px;
+    border: 1px solid var(--black);
+}
+.hero-btn-one{
+    color: var(--black);
+    background-color: var(--secondary-color);
+    border: none !important;
+}
+.hero-left-slides{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ @keyframes scrollUp {
+          from { transform: translate3d(0, 0, 0); }
+          to   { transform: translate3d(0, -50%, 0); }
+        }
+
+        .marquee {
+          will-change: transform;
+          animation: scrollUp 40s linear infinite;
+        }
+
+        .reverse {
+          animation-direction: reverse;
+        }
+
+           .item {
+          flex-shrink: 0;
+        }
+
+.hero-container > .hero-left-marque:first-child {
+  flex: 0 0 25%;
+}
+.hero-container > .hero-content-box {
+  flex: 0 0 50%;
+}
+.hero-container > .hero-left-marque:last-child {
+  flex: 0 0 25%;
+}
+
+.hero-left-slides {
+  display: inline-flex;
+  white-space: nowrap;
+}

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef } from 'react';
 import './Testimonials.css';
 import { FaStar } from 'react-icons/fa';
@@ -6,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperClass } from 'swiper/types';
 
 const testimonials = [
   {
@@ -46,15 +49,14 @@ const testimonials = [
   },
 ];
 
-const TestimonialSlider = ({ reverse = false }) => {
-
-    const swiperRef = useRef(null);
-    const continuousScrollSpeed = 5000;
-    const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+const TestimonialSlider: React.FC<{ reverse?: boolean }> = ({ reverse = false }) => {
+  const swiperRef = useRef<SwiperClass | null>(null);
+  const continuousScrollSpeed = 5000;
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-<div className="relative overflow-hidden my-3">
-      {/* Gradient Overlays for fade effect at edges */}
+    <div className="relative overflow-hidden my-3">
+      {/* Gradient overlays */}
       <div className="absolute left-0 top-0 h-full w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
       <div className="absolute right-0 top-0 h-full w-32 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
 
@@ -64,27 +66,25 @@ const TestimonialSlider = ({ reverse = false }) => {
       >
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          loop={true} // Enable infinite looping
-          speed={continuousScrollSpeed} // Controls the animation speed for the continuous loop
+          loop={true}
+          speed={continuousScrollSpeed}
           autoplay={{
-            delay: 1, // Minimal delay for a truly continuous, ticker-tape-like effect
-            disableOnInteraction: false, // Autoplay continues even if user interacts
-            reverseDirection: reverse, // Controls the direction of autoplay
+            delay: 1,
+            disableOnInteraction: false,
+            reverseDirection: reverse,
           }}
-          slidesPerView="auto" // Allows each slide to have its own defined width
-          spaceBetween={15} // Space between slides
-          freeMode={true} // Essential for continuous, non-snapping movement
-          grabCursor={false} // Disable grab cursor
-          allowTouchMove={false} 
+          slidesPerView="auto"
+          spaceBetween={15}
+          freeMode={true}
+          grabCursor={false}
+          allowTouchMove={false}
           modules={[Autoplay]}
           className="testimonial-wrapper-one"
         >
           {duplicatedTestimonials.map((t, index) => (
             <SwiperSlide
               key={`${t.name}-${index}`}
-              style={{
-                width: '320px', 
-              }}
+              style={{ width: '320px' }}
             >
               <div className="testimonial-card h-full flex flex-col justify-between bg-white p-4 rounded shadow">
                 <div className="testimonial-card-header">
@@ -123,7 +123,7 @@ const TestimonialSlider = ({ reverse = false }) => {
 
 const Testimonials = () => {
   return (
-    <section className="testimonial-section py-12">
+    <section className="testimonial-section">
       <div className="testimonial-container container mx-auto px-5 md:px-12 lg:px-24">
         <div className="testimonial-header flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div className="testimonial-left">

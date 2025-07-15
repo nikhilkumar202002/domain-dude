@@ -14,18 +14,23 @@ import MarqueSlider from "./components/ui/MarqueSlider";
 import EmpoweringBrands from "./components/ui/EmpoweringBrands";
 import Technologies from "./components/ui/Technologies";
 import Testimonials from "./components/home/Testimonials";
+import WhyChooseUs from "./components/home/WhyChooseUs";
+import NewsBlog from "./components/home/NewsBlog";
+import Hero from "./components/home/Hero";
 // import BentoGrid from "./components/home/BentoGrid";
 
 export default function Home() {
   return (
     <>
-        <HeroSection/>
+        <Hero/>
         <MarqueSlider/>
         <EmpoweringBrands/>
         {/* <AboutSection/> */}
         <ServiceSection/>
         <Technologies/>
+        <WhyChooseUs/>
         <Testimonials/>
+        <NewsBlog/>
         {/* <PortfolioAccordian/> */}
         {/* <BentoGrid/> */}
 
