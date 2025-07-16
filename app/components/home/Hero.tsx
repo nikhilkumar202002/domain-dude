@@ -25,7 +25,12 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="overlay overlay-top" />
-      <div className="hero-container h-screen flex">
+
+{/* mobile overlay */}
+
+<div className="mobile-hero-overlay"></div>
+
+      <div className="hero-container h-screen flex gap-2">
 
         <div className="hero-left-marque flex gap-2">
           <div className="hero-left-slides marquee">
@@ -44,6 +49,7 @@ const Hero = () => {
         ))}
           </div>
         </div>
+
         <div className="hero-content-box relative z-10 flex flex-col items-center justify-center h-full px-4 text-center space-y-6 max-w-4xl mx-auto">
 
           <div className="hero-step">
@@ -59,7 +65,33 @@ const Hero = () => {
           </div>
 
           <div className="hero-content space-y-6">
-            <h1 className='max-w-3xl'>Global digital marketing agency your creative partner for Future Leaders.</h1>
+            <h1 className='max-w-3xl'>Building Digital Solutions for Tomorrow’s Leaders</h1>
+            <div className="hero-gmb-review">
+
+              <div className="hero-gmb flex items-center gap-3">
+                <div className="hero-gmb-logo">
+                  <Image src="./Icons/google.svg" width={40} height={40} alt='google review'/>
+                </div>
+                <div className="hero-gmb-review">
+                  <ul>
+                    <li><Image src="./Icons/star.svg" width={20} height={20} alt='google review'/></li>
+                    <li><Image src="./Icons/star.svg" width={20} height={20} alt='google review'/></li>
+                    <li><Image src="./Icons/star.svg" width={20} height={20} alt='google review'/></li>
+                    <li><Image src="./Icons/star.svg" width={20} height={20} alt='google review'/></li>
+                    <li><Image src="./Icons/star.svg" width={20} height={20} alt='google review'/></li>
+                  </ul>
+                  <p className='hero-gmb-reviews'><span>4.8</span> Ratings</p>
+                </div>
+              </div>
+
+              <div className="hero-clients">
+                <div className="hero-clients-avatar">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <div className="hero-btns flex gap-3 justify-center">
               <Button className='hero-btn-one flex gap-2 items-center'>Request a Strategy Call <GoArrowUpRight /></Button>
               <Button className='flex gap-2 items-center'>Explore Our Service <GoArrowUpRight /></Button>

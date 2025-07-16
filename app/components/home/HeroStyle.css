@@ -25,6 +25,7 @@
 
 /* top: white → transparent */
 .overlay-top {
+  z-index: 6;
   top: 0;
   background: linear-gradient(
     to bottom,
@@ -36,6 +37,7 @@
 
 /* bottom: transparent → white */
 .overlay-bottom {
+  z-index: 6;
   bottom: 0;
   background: linear-gradient(
     to top,
@@ -77,6 +79,7 @@
   align-items: center !important;
   justify-content: center; /* if you want vertical centering within a given height */
   text-align: center;
+  z-index: 10;
 }
 .hero-btns button{
     font-family: "Raleway";
@@ -104,7 +107,7 @@
 
         .marquee {
           will-change: transform;
-          animation: scrollUp 40s linear infinite;
+          animation: scrollUp 8s linear infinite;
         }
 
         .reverse {
@@ -128,4 +131,54 @@
 .hero-left-slides {
   display: inline-flex;
   white-space: nowrap;
+}
+.mobile-hero-overlay{
+  width: 100%;
+  height: 100vh !important;
+  display: none;
+  position: absolute;
+  inset: 0;                    
+  background: rgba(255, 255, 255, 0.74); 
+  z-index: 5;                  
+  pointer-events: none;
+}
+
+.hero-gmb-review ul{
+  display: flex;
+  gap: 2px;
+}
+.hero-gmb-reviews{
+  text-align: left;
+  font-family: "Dm Sans";
+  font-size: 14px;
+  span{
+    font-size: 17px;
+    font-weight: 600;
+    font-family: "Dm sans";
+  }
+}
+@media (max-width: 1080px) {
+  .hero-content-box{
+      position: absolute;
+  }
+  .hero-content h1{
+    font-size: 30px;
+    line-height: 40px;
+    width: 100% !important;
+  }
+  .hero-container > .hero-left-marque:first-child {
+  flex: 0 0 50%;
+}
+.hero-container > .hero-content-box {
+  flex: 0 0 50%;
+}
+.hero-container > .hero-left-marque:last-child {
+  flex: 0 0 50%;
+}
+.hero-section{
+  height: 750px;
+}
+.mobile-hero-overlay{
+  display: block;
+}
 }
