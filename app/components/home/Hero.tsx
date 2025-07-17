@@ -23,7 +23,7 @@ const duplicated = [...slides, ...slides]
 const Hero = () => {
 
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="banner">
       <div className="overlay overlay-top" />
 
 {/* mobile overlay */}

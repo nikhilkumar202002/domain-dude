@@ -6,9 +6,9 @@
     --black: #1D1616;
 }
 .about-section{
-    padding: 100px 0;
+    padding: 150px 0 0;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .about-text-wrapper h1{
     font-size: 40px;

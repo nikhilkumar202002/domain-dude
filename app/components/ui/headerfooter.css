@@ -198,7 +198,7 @@
 }
 
 .footer-logo img{
-    width: 190px;
+    width: 100px;
 }
 .footer-menu-container{
     padding-top: 0px;
@@ -244,4 +244,98 @@
     border-top: 1px solid rgba(124, 124, 124, 0.575);
     padding-top: 10px;
     margin-top: 20px;
+}
+.site-header {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background: white;
+  z-index: 50;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out,
+              height 0.3s ease-in-out, 
+              background-color 0.3s ease-in-out, 
+              box-shadow 0.3s ease-in-out;       
+}
+
+.site-header--sticky {
+  position: fixed;
+  top: 0;
+  height:90px;                     
+  box-shadow: rgba(80, 80, 80, 0.1) 0px 10px 50px;
+  background: white; 
+  animation: slideDown 0.3s forwards ease-in-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+/* mega menu design */
+
+.mega-menu-items-list{
+    font-family: "Dm Sans";
+    h1{
+        font-size: 17px;
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+}
+.mega-menu-items-list ul li{
+    font-size: 15px;
+    color: #363636;
+    font-family: "Raleway";
+    font-weight: 500;
+}
+.mega-menu-items-list ul li:hover{
+    color: var(--black);
+    font-weight: 600;
+    transition: all 400ms;
+}
+.mega-menu-portfolio-slide img{
+    width: 100%;
+    border-radius: 30px;
+}
+.mega-menu-arrow{
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 2;
+}
+.mega-menu-container{
+  box-shadow: 0px 25px 24px rgba(149, 157, 165, 0.2);
+
+}
+.mega-menu-portfolio-slide{
+    padding-left: 100px ;
+}
+
+/* headerfooter.css */
+.site-header {
+  position: relative; 
+  width: 100%;
+  background: #fff;
+  transition: all 0.3s ease;
+  z-index: 50;
+  height: 90px;
+}
+
+.site-header--sticky {
+  position: fixed;
+  top: 0;
+  height: 90px;
+  box-shadow: rgba(80, 80, 80, 0.1) 0px 10px 50px;
+  background: white; 
+  animation: slideDown 0.3s forwards ease-in-out;
+}
+
+/* hide/show mega-menu via group-hover */
+.group:hover > .mega-menu,
+.mega-menu:hover {
+  display: block;
+}
+
+/* ensure mega-menu is hidden by default on desktop */
+.mega-menu {
+  display: none;
 }

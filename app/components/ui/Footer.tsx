@@ -26,33 +26,10 @@ const Footer = () => {
         {/* Responsive container */}
         <div className="container mx-auto relative z-10">
           <div className="footer-content w-full px-5 md:px-12 lg:px-24">
-            {/* <div className="footer-subscribe flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
-              
-              <div className="footer-subscribe-text text-center md:text-left">
-                <h1 className="footer-subscribe-heading text-white text-2xl md:text-3xl font-semibold mb-2">Join Our Digital Circle!</h1>
-                <p className="footer-subscribe-content text-white text-sm md:text-base">
-                  Get the latest updates, tips, and offers. No spam—only value.
-                </p>
-              </div>
            
-              <div className="footer-subscribe-form w-full md:w-auto">
-                <form action="" method="post">
-                  <div className="footer-fields flex flex-col sm:flex-row items-center gap-3">
-                    <input
-                      type="text"
-                      placeholder="Your Email"
-                      className="w-full sm:w-auto px-4 py-2 rounded-md"
-                    />
-                    <Button className="subscribe-btn flex items-center gap-2 px-5 py-2 rounded-full text-white">
-                      Subscribe Now <span><MdArrowOutward /></span>
-                    </Button>
-                  </div>
-                </form>
-              </div>
-            </div> */}
-            <div className="footer-menu-container grid grid-cols-12 gap-8 mt-12">
-              <div className="footer-logo col-span-12 md:col-span-6">
-                <Image src="/LOGO-WHITE.png" width={190} height={0} alt="Domain Dude Logo" />
+            <div className="footer-menu-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 mt-8 ">
+              <div className="footer-logo md:col-span-1">
+                <Image src="/main-logo.png" width={100} height={0} alt="Domain Dude Logo" />
                 <p className='footer-about-content'>Domain Dude delivers innovative web, design, and marketing solutions that help brands grow, engage, and stand out in the digital world.</p>
                 <div className="footer-social-icons">
                   <h1>Follow Us On</h1>
@@ -64,7 +41,7 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="footer-menu-list col-span-6 sm:col-span-4 md:col-span-2">
+              <div className="footer-menu-list">
                 <ul>
                   <li className="font-bold mb-2">Company</li>
                   <li><Link href="/">About Us</Link></li>
@@ -75,7 +52,7 @@ const Footer = () => {
                   <li><Link href="/contact">Contact Us</Link></li>
                 </ul>
               </div>
-              <div className="footer-menu-list col-span-6 sm:col-span-4 md:col-span-2">
+              <div className="footer-menu-list">
                 <ul>
                   <li className="font-bold mb-2">Services</li>
                   <li><Link href="/">Web Development</Link></li>
@@ -84,17 +61,19 @@ const Footer = () => {
                   <li><Link href="/portfolio">Branding</Link></li>
                   <li><Link href="/contact">Video Production</Link></li>
                   <li><Link href="/contact">Graphics Design</Link></li>
-                </ul>
-                <ul className="mt-4">
+                </ul>          
+              </div>
+               <div className="footer-menu-list">
+                <ul>
                   <li className="font-bold mb-2">Resources</li>
                   <li><Link href="/">Case Studies</Link></li>
                   <li><Link href="/company">Portfolio</Link></li>
                   <li><Link href="/service">FAQs</Link></li>
                   <li><Link href="/portfolio">Client Testimonials</Link></li>
                   <li><Link href="/contact">Download Brochure</Link></li>
-                </ul>
+                </ul>      
               </div>
-              <div className="footer-menu-list col-span-6 sm:col-span-4 md:col-span-2">
+              <div className="footer-menu-list">
                 <ul>
                   <li className="font-bold mb-2">Legal</li>
                   <li><Link href="/">Privacy Policy</Link></li>
