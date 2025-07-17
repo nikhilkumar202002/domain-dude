@@ -3,7 +3,7 @@ import "./HeroStyle.css"
 import Image from 'next/image'
 import { HiArrowLongRight } from "react-icons/hi2";
 import { Button } from '@radix-ui/themes';
-import { GoArrowUpRight } from "react-icons/go";
+import { GoArrowDown  } from "react-icons/go";
 
 const slides = [
   '/Portfolio/colorland.jpg',
@@ -66,9 +66,9 @@ const Hero = () => {
 
           <div className="hero-content space-y-6">
             <h1 className='max-w-3xl'>Building Digital Solutions for Tomorrow’s Leaders</h1>
-            <div className="hero-gmb-review">
 
-              <div className="hero-gmb flex items-center gap-3">
+            <div className="hero-gmb-review flex gap-2 justify-center">
+              <div className="hero-gmb flex items-center gap-3 justify-center">
                 <div className="hero-gmb-logo">
                   <Image src="./Icons/google.svg" width={40} height={40} alt='google review'/>
                 </div>
@@ -84,6 +84,18 @@ const Hero = () => {
                 </div>
               </div>
 
+            <div style={{ width: '1px', height: '50px', backgroundColor: '#ccc', margin: '0 20px 0 10px' }} />
+
+              <div className="hero-gmb-avatar">
+                <div className="hero-avatars">
+                   <Image src="/avatar-1.jpg" width={50} height={50} alt="Company" className="avatar"/>
+                  <Image src="/avatar-2.jpg" width={50} height={50} alt="Company" className="avatar"/>
+                  <Image src="/avatar-3.jpg" width={50} height={50} alt="Company" className="avatar"/>
+                  <Image src="/avatar-3.jpg" width={50} height={50} alt="Company" className="avatar"/>
+                </div>
+                <span className="reviews-count">10+ <br /><p>Company Colabration</p></span>
+              </div>
+
               <div className="hero-clients">
                 <div className="hero-clients-avatar">
                   <ul>
@@ -92,10 +104,43 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="hero-btns flex gap-3 justify-center">
-              <Button className='hero-btn-one flex gap-2 items-center'>Request a Strategy Call <GoArrowUpRight /></Button>
-              <Button className='flex gap-2 items-center'>Explore Our Service <GoArrowUpRight /></Button>
-            </div>
+               <div className="hero-btn-wrapper">
+      <div className="rotating-text">
+        <svg
+          viewBox="0 0 200 200"
+          className="rotating-svg"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <path
+              id="circlePath"
+              d="
+                M100,100
+                m-75,0
+                a75,75 0 1,1 150,0
+                a75,75 0 1,1 -150,0
+              "
+            />
+          </defs>
+          <text
+            dy="-4"              /* nudge text inward */
+            textLength="440"      /* adjust to stretch around */
+            className="circle-text"
+          >
+            <textPath
+              xlinkHref="#circlePath"
+              startOffset="0"
+            >
+              Domain Dude ★ Since 2012 ★ 
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <Button className="hero-btn-one flex items-center justify-center">
+        <GoArrowDown/>
+      </Button>
+    </div>
           </div>
         </div>
 

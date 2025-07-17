@@ -25,22 +25,22 @@ const WhyChooseUs = () => {
 
                    <div className="y-counter-container flex flex-wrap gap-[20px]">
   <div className="y-counter w-[calc(50%-10px)] md:w-[calc(25%-15px)]">
-    <h1><CountUp end={500} duration={4} />+</h1>
+    <h1><CountUp end={500} duration={4} /> +</h1>
     <p>Successful Projects</p>
   </div>
 
   <div className="y-counter w-[calc(50%-10px)] md:w-[calc(25%-15px)]">
-    <h1><CountUp end={300} duration={4} />+</h1>
+    <h1><CountUp end={300} duration={4} /> +</h1>
     <p>Happy Clients Worldwide</p>
   </div>
 
   <div className="y-counter w-[calc(50%-10px)] md:w-[calc(25%-15px)]">
-    <h1><CountUp end={99} duration={4} />%</h1>
+    <h1><CountUp end={99} duration={4} /> %</h1>
     <p>Client Retention Rate</p>
   </div>
 
   <div className="y-counter w-[calc(50%-10px)] md:w-[calc(25%-15px)]">
-    <h1><CountUp end={12} duration={4} />+</h1>
+    <h1><CountUp end={12} duration={4} /> +</h1>
     <p>Year Of Experience</p>
   </div>
 </div>

@@ -1,0 +1,175 @@
+:root{
+    --btn-color: #FFC800;
+    --primary-color: #003566;
+    --secondary-color: #70ee9c;
+    --heading-color: #0b132b;
+    --black: #1D1616;
+}
+.about-section{
+    padding: 100px 0;
+    width: 100%;
+    height: 100vh;
+}
+.about-text-wrapper h1{
+    font-size: 40px;
+    font-family: "Dm Sans";
+    font-weight: 580;
+    line-height: 48px;
+    text-align: center;
+    color: #7e7e7e;
+    text-transform: none !important;
+}
+.about-main-content{
+    color: var(--black);
+}
+.about-btn{
+    padding-top: 45px;
+}
+.about-btn button{
+    padding: 12px 32px;
+    background-color: var(--secondary-color);
+    color: var(--black);
+    font-family: "Raleway";
+    font-weight: 600;
+    border-radius: 40px;
+}
+.about-btn button:hover{
+    background-color: var(--primary-color);
+    color: white;
+    transition: all 300ms;
+}
+.about-second-btn{
+    border: 1px solid var(--black);
+    background-color: transparent !important;
+}
+.about-second-btn:hover{
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    transition: all 300ms;
+    border: 1px solid var(--primary-color);
+}
+.about-counter{
+    padding: 100px 100px 0px 100px;
+}
+.about-counters{
+    border: 1px solid #bbbbbb;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    h1{
+        font-size: 30px;
+        font-family: "Dm Sans";
+        font-weight: 600;
+    }
+    p{
+        font-size: 15px;
+        font-family: "Raleway";
+    }
+}
+.about-text-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive design */
+
+@media (max-width: 1080px) {
+    .about-counter{
+    padding: 60px 0px 0px 0px;
+    }
+    .about-counters{
+        padding: 15px;
+    }
+    .about-counters h1{
+        font-size: 23px;
+    }
+    .about-content h1{
+        font-size: 28px;
+        line-height: 37px;
+    }
+    .about-section{
+    padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 80px 0px;
+    height: auto;      /* let it expand instead of filling viewport */
+    overflow: visible;
+
+  }
+
+  .about-text-wrapper h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .about-btn {
+    padding-top: 30px;
+  }
+
+  .about-btn button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+.about-counters{
+    width: 100%;
+    padding: 15px !important;
+}
+  .about-counter {
+    padding: 40px 20px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px;
+  }
+
+  .about-counters {
+    padding: 20px;
+  }
+
+  .about-counters h1 {
+    font-size: 24px;
+  }
+
+  .about-counters p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+    
+  .about-text-wrapper h1 {
+    font-size: 35px;
+    line-height: 38px;
+  }
+
+  .about-btn {
+    padding-top: 40px;
+    gap: 12px;
+  }
+
+  .about-btn button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .about-counter {
+    padding: 80px 10px 0;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-counters {
+    padding: 15px;
+  }
+  .about-counters h1 {
+    font-size: 24px;
+  }
+  .about-counters p {
+    font-size: 13px;
+  }
+}
