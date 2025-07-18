@@ -9,6 +9,7 @@ import Image from 'next/image';
 import './headerfooter.css';
 import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
+import SVGLogoAnimation from './AnimatedSvg';
 
 const servicesMegaMenu = [
   {
@@ -72,6 +73,19 @@ const Header = () => {
   const [isSticky,     setIsSticky]     = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
 
+    const [isAnimating, setIsAnimating] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+
+     // run on both hover‐enter and hover‐leave
+  const triggerAnimation = () => {
+    setIsAnimating(true);
+    setAnimKey((k) => k + 1);      // force remount so CSS animation restarts
+  };
+
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);         // back to PNG
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const banner = document.getElementById('banner');
@@ -112,11 +126,29 @@ const Header = () => {
           </ul>
 
           {/* LOGO */}
-          <div className="menu-logo">
-            <Link href="/">
-              <Image src="/main-logo.png" alt="Domain Dude Logo" width={80} height={30} />
-            </Link>
-          </div>
+          <div
+      className="menu-logo"
+      onMouseEnter={triggerAnimation}
+      onMouseLeave={triggerAnimation}
+      style={{ cursor: 'pointer' }}
+    >
+      <Link href="/" onClick={() => setIsAnimating(false)}>
+        {isAnimating ? (
+          // `key={animKey}` forces a fresh mount each time you trigger
+          <SVGLogoAnimation
+            key={animKey}
+            onAnimationEnd={handleAnimationEnd}
+          />
+        ) : (
+          <Image
+            src="/main-logo.png"
+            alt="Domain Dude Logo"
+            width={80}
+            height={30}
+          />
+        )}
+      </Link>
+    </div>
 
           {/* RIGHT ACTIONS */}
           <div className="flex items-center gap-3">

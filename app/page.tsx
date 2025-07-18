@@ -13,8 +13,10 @@ import EmpoweringBrands from "./components/ui/EmpoweringBrands";
 import Technologies from "./components/ui/Technologies";
 import Testimonials from "./components/home/Testimonials";
 import ContactSection from "./components/home/ContactSection";
+import "./globals.css";
 
 export default function Home() {
+  
   return (
     <>
       <Hero />

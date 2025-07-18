@@ -22,9 +22,6 @@
         line-height: 55px;
         padding-bottom: 15px;
     }
-    span{
-        color: var(--secondary-color);
-    }
     p{
         font-size: 16px;
         font-weight: 500;
@@ -148,4 +145,8 @@
 .contact-form-btn:hover{
     background-color: var(--primary-color);
     color: white;
+}
+.heading-word {
+  display: inline-block;
+  will-change: transform, opacity;
 }

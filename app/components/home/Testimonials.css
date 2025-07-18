@@ -1,8 +1,16 @@
+@import "tailwindcss";
+
+:root{
+    --btn-color: #FFC800;
+    --primary-color: #003566;
+    --secondary-color: #70ee9c;
+    --heading-color: #0b132b;
+    --black: #1D1616;
+}
 .testimonial-heading{
     font-size: 20px;
     font-family: "Dm sans";
     font-weight: 500;
-    line-height: 50px;
     color: #959595;
 }
 .testimonial-light-heading{
@@ -24,6 +32,9 @@
     display: flex;
     gap: 4px;
 }
+.testimonial-hightlight{
+    color: var(--);
+}
 .testimonial-content p{
     font-size: 17px;
     font-family: "Raleway";
@@ -34,6 +45,11 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.testimonial-heading,
+.testimonial-subheadline,
+.testimonial-slider {
+  transition: all 0.3s ease;
 }
 .testimonial-profile img{
     width: 50px;
@@ -70,4 +86,18 @@
 }
 .testimonial-section{
     padding: 100px 0;
+    position: relative;
+  overflow-x: hidden;
+  overflow-y: clip;
+}
+.testimonial-hightlight{
+    color: var(--secondary-color);
+}
+.slider-clip {
+  overflow-y: hidden;
+}
+
+/* keep only horizontal hidden on the section */
+.testimonial-section {
+  overflow-x: hidden;
 }
