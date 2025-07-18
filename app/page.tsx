@@ -12,6 +12,7 @@ import AboutSection from "./components/home/AboutSection";
 import EmpoweringBrands from "./components/ui/EmpoweringBrands";
 import Technologies from "./components/ui/Technologies";
 import Testimonials from "./components/home/Testimonials";
+import ContactSection from "./components/home/ContactSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <EmpoweringBrands />
       <Technologies />
       <Testimonials />
+      <ContactSection/>
     </>
   );
 }

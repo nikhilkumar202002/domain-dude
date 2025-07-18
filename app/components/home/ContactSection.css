@@ -1,0 +1,151 @@
+:root{
+    --btn-color: #FFC800;
+    --primary-color: #003566;
+    --secondary-color: #70ee9c;
+    --heading-color: #0b132b;
+    --black: #1D1616;
+}
+.contact-section{
+    padding: 0 0 100px;
+}
+.contact-content{
+    h4{
+        font-size:17px;
+        color: rgb(151, 151, 151);
+        font-family: "Raleway";
+    }
+    h1{
+        font-size: 45px;
+        font-weight: 600;
+        font-family: "Dm Sans";
+        color: var(--black);
+        line-height: 55px;
+        padding-bottom: 15px;
+    }
+    span{
+        color: var(--secondary-color);
+    }
+    p{
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Raleway";
+        padding-bottom: 15px;
+    }
+}
+.contact-details-icon{
+    background-color: var(--secondary-color);
+    color: var(--black);
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-details-details{
+    line-height: 0px;
+    font-size: 17px !important;
+    font-weight: 600;
+    p{
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+.contact-form{
+    background-color: rgb(247, 247, 247);
+    padding: 30px;
+    border-radius: 30px;
+}
+.contact-form-row label{
+    font-size: 13px;
+    font-family: "Dm Sans";
+    font-weight: 500;
+    color: #565656;
+}
+.contact-form-row input{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: white;
+    outline: none;
+    font-family: "Raleway";
+    font-size: 15px;
+}
+.contact-form-col label{
+    font-size: 13px;
+    font-family: "Dm Sans";
+    font-weight: 500;
+    color: #565656;
+}
+.contact-form-col input{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: white;
+    outline: none;
+    font-family: "Raleway";
+    font-size: 15px;
+}
+.contact-form-row select{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: white;
+    outline: none;
+    font-family: "Raleway";
+    font-size: 15px;
+}
+.contact-form-row textarea{
+     width: 100%;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: white;
+    outline: none;
+    font-family: "Raleway";
+    font-size: 15px;
+}
+.contact-form-row select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none; /* Removes default arrow styling */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.contact-form-row select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(92, 157, 237, 0.2);
+}
+
+.contact-form-row option {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: none;
+}
+.contact-form-btn{
+    background-color: var(--secondary-color);
+    color: var(--black);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-family: "Raleway";
+    font-weight: 600;
+    margin-top: 15px;
+    transition: 400ms;
+    font-size: 16px;
+}
+.contact-form-btn:hover{
+    background-color: var(--primary-color);
+    color: white;
+}

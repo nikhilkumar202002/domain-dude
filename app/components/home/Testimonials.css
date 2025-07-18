@@ -1,17 +1,24 @@
 .testimonial-heading{
-    font-size: 45px;
+    font-size: 20px;
     font-family: "Dm sans";
     font-weight: 500;
     line-height: 50px;
-    color: #1e1e1e;
+    color: #959595;
 }
 .testimonial-light-heading{
     color: #8a8a8a;
+    
+}
+.testimonial-left{
+    text-align: center;
+    line-height: 35px;
+    padding-bottom: 40px;
+  
 }
 .testimonial-subheadline{
-    font-size: 16px;
-    font-family: "Raleway";
-    font-weight: 500;
+    font-size: 40px;
+      font-family: "Dm Sans";
+    font-weight: 600;
 }
 .testimonials-star{
     display: flex;

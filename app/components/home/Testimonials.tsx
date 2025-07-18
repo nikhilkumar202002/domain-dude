@@ -125,18 +125,16 @@ const Testimonials = () => {
   return (
     <section className="testimonial-section">
       <div className="testimonial-container container mx-auto px-5 md:px-12 lg:px-24">
-        <div className="testimonial-header flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <div className="testimonial-header ">
           <div className="testimonial-left">
-            <h1 className="testimonial-heading text-3xl font-bold leading-tight">
-              What Our <br />
-              <span className="testimonial-light-heading text-primary">Clients Are Saying</span>
+            <h1 className="testimonial-heading">
+              What Our  Clients Are Saying
             </h1>
-          </div>
-          <div className="testimonial-right md:max-w-md text-gray-600">
-            <p className="testimonial-subheadline text-base">
-              Startups and enterprises choose Domain Dude for expert web design, branding, and digital marketing that drives real results. See what our happy clients say.
+            <p className="testimonial-subheadline">
+              Trusted for Design & Marketing.
             </p>
           </div>
+         
         </div>
       </div>
 
