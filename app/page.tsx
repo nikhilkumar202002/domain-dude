@@ -14,6 +14,7 @@ import Technologies from "./components/ui/Technologies";
 import Testimonials from "./components/home/Testimonials";
 import ContactSection from "./components/home/ContactSection";
 import "./globals.css";
+import Services from "./components/home/Services";
 
 export default function Home() {
   
@@ -23,6 +24,7 @@ export default function Home() {
       <AboutSection />
       <EmpoweringBrands />
       <Technologies />
+      <Services/>
       <Testimonials />
       <ContactSection/>
     </>

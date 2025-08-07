@@ -4,26 +4,42 @@ import Image from 'next/image'
 import { HiArrowLongRight } from "react-icons/hi2";
 import { Button } from '@radix-ui/themes';
 import { GoArrowDown  } from "react-icons/go";
+import MarqueeSlider from '../ui/MarqueSlider';
 
-const slides = [
-  '/Portfolio/colorland.jpg',
-  '/Portfolio/desert-rose-flowers.jpg',
-  '/Portfolio/lets-hear-it.jpg',
-  '/Portfolio/MOCKUP-1.jpg',
-  '/Portfolio/MOCKUP-2.jpg',
-  '/Portfolio/MOCKUP-3.jpg',
-  '/Portfolio/MOCKUP-4.jpg',
-  '/Portfolio/MOCKUP-5.jpg',
-  '/Portfolio/MOCKUP-6.jpg',
-  '/Portfolio/techfuge.jpg',
-]
+const SET_COUNT = 4
 
-const duplicated = [...slides, ...slides]
+// Four separate portfolios, each with three items
+const portfolios: string[][] = [
+  [
+    '/Portfolio/Techfuge.webp',
+    '/Portfolio/DESERTROSEFLOWERS.webp',
+    '/Portfolio/pantryindia.webp',
+  ],
+  [
+    '/Portfolio/koffee-junction.webp',
+    '/Portfolio/metaark-online.webp',
+  ],
+  [
+    '/Portfolio/Techfuge.webp',
+    '/Portfolio/DESERTROSEFLOWERS.webp',
+    '/Portfolio/pantryindia.webp',
+  ],
+  [
+    '/Portfolio/koffee-junction.webp',
+    '/Portfolio/metaark-online.webp',
+  ],
+];
+
+// Prepare slider configurations: repeated slides + direction
+const sliderConfigs = portfolios.map((slides, idx) => ({
+  repeated: Array(SET_COUNT).fill(slides).flat(),
+  reverse: idx % 2 === 1,   // alternate direction
+}))
 
 const Hero = () => {
 
   return (
-    <section className="hero-section" id="banner">
+    <section className="hero-section">
       <div className="overlay overlay-top" />
 
 {/* mobile overlay */}
@@ -32,23 +48,17 @@ const Hero = () => {
 
       <div className="hero-container h-screen flex gap-2">
 
-        <div className="hero-left-marque flex gap-2">
-          <div className="hero-left-slides marquee">
-             {duplicated.map((src, i) => (
-                <div className="item" key={`c1-${i}`}>
-                  <Image src={src} width={300} height={200} alt="" />
-                </div>
-              ))}
+         <div className="hero-left-marque flex gap-2">
+          {sliderConfigs.slice(0, 2).map(({ repeated, reverse }, i) => (
+            <div
+              key={i}
+              className={`hero-left-slides marquee ${reverse ? 'reverse' : ''}`}
+              style={{ '--marquee-repeat': SET_COUNT } as React.CSSProperties}
+            >
+              <MarqueeSlider slides={repeated} reverse={reverse} />
+            </div>
+          ))}
           </div>
-
-          <div className="hero-left-slides marquee reverse">
-           {duplicated.map((src, i) => (
-          <div className="item" key={`c2-${i}`}>
-            <Image src={src} width={300} height={200} alt="" />
-          </div>
-        ))}
-          </div>
-        </div>
 
         <div className="hero-content-box relative z-10 flex flex-col items-center justify-center h-full px-4 text-center space-y-6 max-w-4xl mx-auto">
 
@@ -144,22 +154,16 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-left-marque flex gap-2">
-             <div className="hero-left-slides marquee">
-             {duplicated.map((src, i) => (
-          <div className="item" key={`c1-${i}`}>
-            <Image src={src} width={300} height={200} alt="" />
-          </div>
-        ))}
-          </div>
-
-           <div className="hero-left-slides marquee reverse">
-           {duplicated.map((src, i) => (
-          <div className="item" key={`c2-${i}`}>
-            <Image src={src} width={300} height={200} alt="" />
-          </div>
-        ))}
-          </div>
+     <div className="hero-left-marque flex gap-2">
+          {sliderConfigs.slice(2, 4).map(({ repeated, reverse }, i) => (
+            <div
+              key={i + 2}
+              className={`hero-left-slides marquee ${reverse ? 'reverse' : ''}`}
+              style={{ '--marquee-repeat': SET_COUNT } as React.CSSProperties}
+            >
+              <MarqueeSlider slides={repeated} reverse={reverse} />
+            </div>
+          ))}
         </div>
 
       </div>

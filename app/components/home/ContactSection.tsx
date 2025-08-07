@@ -7,6 +7,8 @@ import { Button } from '@radix-ui/themes';
 import { RiMailSendFill } from "react-icons/ri";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
+import { IoLogoWhatsapp } from "react-icons/io";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,15 +104,27 @@ const ContactSection = () => {
                     <span key={index} className="heading-word inline-block mr-2">{word}</span>
                 ))}
                 </h1>
-              <p>At <strong>Domain Dude</strong>, we don't just build websites—we craft digital experiences that connect, inspire, and convert. Whether you're a startup or a seasoned brand, our team is here to turn your ideas into powerful online realities.</p>
+              <p>At <strong>Domain Dude</strong>, we dont just build websites—we craft digital experiences that connect, inspire, and convert. Whether your a startup or a seasoned brand, our team is here to turn your ideas into powerful online realities.</p>
+              <Link href="tel:+917736016507">
+                <div className="contact-details flex items-center gap-3 mt-4">
+                  <div className="contact-details-icon"><BiSolidPhoneCall/></div>
+                  <div className="contact-details-details"><p>Call Now:</p> <br />+91 77360 16507</div>
+                </div>
+              </Link>
+
+               <Link href="tel:+917736016507">
+                <div className="contact-details flex items-center gap-3 mt-4">
+                  <div className="contact-details-icon"><IoLogoWhatsapp/></div>
+                  <div className="contact-details-details"><p>Whatsapp Now:</p> <br />+91 77360 16507</div>
+                </div>
+              </Link>
+             
+              <Link href="mailto:info@domaindude.in">
               <div className="contact-details flex items-center gap-3 mt-4">
-                <div className="contact-details-icon"><BiSolidPhoneCall/></div>
-                <div className="contact-details-details"><p>Call Now:</p> <br />+91 77360 16507</div>
+                  <div className="contact-details-icon"><TbMailFilled/></div>
+                  <div className="contact-details-details"><p>Mail Us:</p> <br />info@domaindude.in</div>
               </div>
-              <div className="contact-details flex items-center gap-3 mt-4">
-                <div className="contact-details-icon"><TbMailFilled/></div>
-                <div className="contact-details-details"><p>Mail Us:</p> <br />domaindude2025@gmail.com</div>
-              </div>
+              </Link>
             </div>
           </div>
 

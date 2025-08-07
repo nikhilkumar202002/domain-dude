@@ -1,11 +1,10 @@
 
-  import React from 'react';
-  import "./AnimatedSvg.css"
+import React from 'react';
+import "./AnimatedSvg.css"
 
 const AnimatedSvg = ({ onAnimationEnd }) => (
     
-          
-  <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243.15 238.7" width="100" height="70">
+  <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243.15 238.7" width="100" height="70" onAnimationEnd={onAnimationEnd}>
     <defs>
       <style>{`
       .cls-1 {

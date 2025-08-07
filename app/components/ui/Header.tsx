@@ -9,7 +9,6 @@ import Image from 'next/image';
 import './headerfooter.css';
 import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
-import SVGLogoAnimation from './AnimatedSvg';
 
 const servicesMegaMenu = [
   {
@@ -70,27 +69,14 @@ const servicesMegaMenu = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isSticky,     setIsSticky]     = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
-
-    const [isAnimating, setIsAnimating] = useState(false);
-  const [animKey, setAnimKey] = useState(0);
-
-     // run on both hover‐enter and hover‐leave
-  const triggerAnimation = () => {
-    setIsAnimating(true);
-    setAnimKey((k) => k + 1);      // force remount so CSS animation restarts
-  };
-
-  const handleAnimationEnd = () => {
-    setIsAnimating(false);         // back to PNG
-  };
 
   useEffect(() => {
     const handleScroll = () => {
-      const banner = document.getElementById('banner');
-      if (!banner) return;
-      setIsSticky(banner.getBoundingClientRect().bottom <= 0);
+      const about = document.getElementById('about');
+      if (!about) return;
+      setIsSticky(about.getBoundingClientRect().bottom <= 0);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -127,37 +113,20 @@ const Header = () => {
 
           {/* LOGO */}
           <div
-      className="menu-logo"
-      onMouseEnter={triggerAnimation}
-      onMouseLeave={triggerAnimation}
-      style={{ cursor: 'pointer' }}
-    >
-      <Link href="/" onClick={() => setIsAnimating(false)}>
-        {isAnimating ? (
-          // `key={animKey}` forces a fresh mount each time you trigger
-          <SVGLogoAnimation
-            key={animKey}
-            onAnimationEnd={handleAnimationEnd}
-          />
-        ) : (
-          <Image
-            src="/main-logo.png"
-            alt="Domain Dude Logo"
-            width={80}
-            height={30}
-          />
-        )}
-      </Link>
-    </div>
+            className="menu-logo"
+            style={{ cursor: 'pointer' }}
+          >
+            <Link href="/" >
+                <Image src="/main-logo.png" alt="Domain Dude Logo" width={80} height={30} />
+            </Link>
+          </div>
 
           {/* RIGHT ACTIONS */}
           <div className="flex items-center gap-3">
             <div className='header-login-signup flex gap-3'>
-              <Button className="header-btn header-signup hidden md:flex rounded-full items-center gap-2">
-                Sign Up <MdArrowOutward />
-              </Button>
+              
               <Button className="header-btn hidden md:flex rounded-full items-center gap-2">
-                Login <MdArrowOutward />
+                Contact Us <MdArrowOutward />
               </Button>
             </div>
 
@@ -183,7 +152,7 @@ const Header = () => {
             <div
               className={`mega-menu-container absolute inset-x-0 top-full bg-white z-40
               ${megaMenuOpen ? 'block' : 'hidden'}`}
-  onMouseEnter={() => setMegaMenuOpen(true)}
+              onMouseEnter={() => setMegaMenuOpen(true)}
             >
               <div className="container mx-auto px-8 py-6 lg:px-24">
                 <div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-8">
@@ -195,7 +164,7 @@ const Header = () => {
                         <ul className="list-inside space-y-1">
                           {col.items.map((item) => (
                             <li key={item.label}>
-                              <Link href={item.href} className='flex items-center gap-2'><span className='mega-menu-arrow '><GoArrowUpRight/></span>{item.label}</Link>
+                              <Link href={item.href} className='flex items-center gap-2'><span className='mega-menu-arrow '><GoArrowUpRight /></span>{item.label}</Link>
                             </li>
                           ))}
                         </ul>
@@ -213,7 +182,7 @@ const Header = () => {
                       className="object-cover w-full h-auto"
                     />
 
-                  
+
                   </div>
                 </div>
               </div>

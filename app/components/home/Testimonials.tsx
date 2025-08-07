@@ -182,7 +182,7 @@ const Testimonials: React.FC = () => {
           What Our Clients Are Saying
         </motion.h1>
         <motion.p
-          className="testimonial-subheadline mb-8 text-gray-600"
+          className="testimonial-subheadline mb-8"
           variants={itemVariant}
           custom={0.1}
         >

@@ -1,105 +1,110 @@
 @import "tailwindcss";
 
-:root{
-    --btn-color: #FFC800;
-    --primary-color: #003566;
-    --secondary-color: #70ee9c;
-    --heading-color: #0b132b;
-    --black: #1D1616;
+:root {
+  --btn-color: #FFC800;
+  --primary-color: #003566;
+  --secondary-color: #70ee9c;
+  --heading-color: #0b132b;
+  --black: #1D1616;
+  --marquee-repeat: 4;
+  --marquee-duration: 40s;
 }
 
-.hero-section{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
+
 .overlay {
   position: absolute;
   left: 0;
   right: 0;
-  height: 120px;          /* tweak this to taste */
-  pointer-events: none;   /* clicks pass through */
-  z-index: 50;            /* above background, below your content */
+  height: 120px;
+  pointer-events: none;
+  z-index: 50;
 }
 
-/* top: white → transparent */
 .overlay-top {
   z-index: 6;
   top: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,1) 0%,
-    rgba(255, 255, 255, 0.0) 100%
-
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.0) 100%);
 }
 
-/* bottom: transparent → white */
 .overlay-bottom {
   z-index: 6;
   bottom: 0;
-  background: linear-gradient(
-    to top,
-    rgba(255,255,255,1) 0%,
-    rgba(255, 255, 255, 0.0) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.0) 100%);
 }
-.hero-step ul{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--black);
+
+.hero-step ul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--black);
 }
-.hero-step{
-    padding: 8px 25px;
-    border: 1px solid rgba(29, 22, 22, 0.08);
-    border-radius: 30px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(65deg, white,rgba(112, 238, 156, 0.29));
+
+.hero-step {
+  padding: 8px 25px;
+  border: 1px solid rgba(29, 22, 22, 0.08);
+  border-radius: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(65deg, white, rgba(112, 238, 156, 0.29));
 }
-.hero-content h1{
-    font-family: "DM Sans";
-    font-weight: 600;
-    font-size: 52;
-    line-height: 65px;
-    color: var(--black);
+
+.hero-content h1 {
+  font-family: "DM Sans";
+  font-weight: 600;
+  font-size: 52;
+  line-height: 65px;
+  color: var(--black);
 }
-.hero-btns{
-    margin-top: 30px;
+
+.hero-btns {
+  margin-top: 30px;
 }
-.hero-content-box{
- display: flex;
+
+.hero-content-box {
+  display: flex;
   flex-direction: column;
   align-items: center !important;
-  justify-content: center; /* if you want vertical centering within a given height */
+  justify-content: center;
+  /* if you want vertical centering within a given height */
   text-align: center;
   z-index: 10;
 }
 
-.hero-btn-one{
+.hero-btn-one {
   width: 90px;
   height: 90px;
   border-radius: 50% !important;
-    color: var(--black);
-    background-color: var(--secondary-color);
-    border: none !important;
-    font-family: "Raleway";
-    font-size: 30px;
-    color: var(--black);
-    font-weight: 600;
+  color: var(--black);
+  background-color: var(--secondary-color);
+  border: none !important;
+  font-family: "Raleway";
+  font-size: 30px;
+  color: var(--black);
+  font-weight: 600;
 }
+
 .hero-btn-wrapper {
   position: relative;
-  width: 130px;     /* adjust diameter as needed */
+  width: 130px;
+  /* adjust diameter as needed */
   height: 130px;
   margin: 0 auto;
 }
+
 .rotating-text {
   position: absolute;
   inset: 0;
@@ -123,8 +128,13 @@
 }
 
 @keyframes spin {
-  from   { transform: rotate(0deg); }
-  to     { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* center the button inside the rotating circle */
@@ -134,36 +144,41 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.hero-left-slides{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+.hero-left-slides {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
- @keyframes scrollUp {
-          from { transform: translate3d(0, 0, 0); }
-          to   { transform: translate3d(0, -50%, 0); }
-        }
 
-        .marquee {
-          will-change: transform;
-          animation: scrollUp 8s linear infinite;
-        }
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(-100% / var(--marquee-repeat))); }
+}
 
-        .reverse {
-          animation-direction: reverse;
-        }
+.marquee {
+  will-change: transform;
+  animation: scrollUp var(--marquee-duration) linear infinite;
+  backface-visibility: hidden; /* smooths rendering */
+}
 
-           .item {
-          flex-shrink: 0;
-        }
+.reverse {
+  animation-direction: reverse;
+}
 
-.hero-container > .hero-left-marque:first-child {
+.item {
+  flex-shrink: 0;
+}
+
+.hero-container>.hero-left-marque:first-child {
   flex: 0 0 25%;
 }
-.hero-container > .hero-content-box {
+
+.hero-container>.hero-content-box {
   flex: 0 0 50%;
 }
-.hero-container > .hero-left-marque:last-child {
+
+.hero-container>.hero-left-marque:last-child {
   flex: 0 0 25%;
 }
 
@@ -171,26 +186,29 @@
   display: inline-flex;
   white-space: nowrap;
 }
-.mobile-hero-overlay{
+
+.mobile-hero-overlay {
   width: 100%;
   height: 100vh !important;
   display: none;
   position: absolute;
-  inset: 0;                    
-  background: rgba(255, 255, 255, 0.86); 
-  z-index: 5;                  
+  inset: 0;
+  background: rgba(255, 255, 255, 0.86);
+  z-index: 5;
   pointer-events: none;
 }
 
-.hero-gmb-review ul{
+.hero-gmb-review ul {
   display: flex;
   gap: 2px;
 }
-.hero-gmb-reviews{
+
+.hero-gmb-reviews {
   text-align: left;
   font-family: "Dm Sans";
   font-size: 14px;
-  span{
+
+  span {
     font-size: 17px;
     font-weight: 600;
     font-family: "Dm sans";
@@ -201,58 +219,70 @@
   display: flex;
   align-items: center;
 }
+
 .hero-avatars {
   display: flex;
-  /* shift entire group left so border-overlaps look clean */
   margin-right: 12px;
 }
+
 .hero-avatars .avatar {
   border-radius: 50%;
   border: 2px solid var(--secondary-color);
   box-sizing: content-box;
   margin-left: -12px !important;
 }
+
 .hero-avatars .avatar:first-child {
   margin-left: 0;
 }
+
 .reviews-count {
   font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   text-align: left;
   line-height: 20px;
-  color: #0b132b; /* or whatever your heading color is */
+  color: #0b132b;
+  /* or whatever your heading color is */
 }
-.hero-gmb-avatar p{
+
+.hero-gmb-avatar p {
   font-size: 14px;
   font-weight: 500;
 }
 
 @media (max-width: 1080px) {
-  .hero-content-box{
-      position: absolute;
+  .hero-content-box {
+    position: absolute;
   }
-  .hero-content h1{
+
+  .hero-content h1 {
     font-size: 35px;
     line-height: 40px;
     width: 100% !important;
   }
-  .hero-container > .hero-left-marque:first-child {
-  flex: 0 0 50%;
-}
-.hero-container > .hero-content-box {
-  flex: 0 0 50%;
-}
-.hero-container > .hero-left-marque:last-child {
-  flex: 0 0 50%;
-}
-.hero-section{
-  height: 750px;
-}
-.mobile-hero-overlay{
-  display: block;
-}
-.hero-gmb-review{
-  display: none;
-}
+
+  .hero-container>.hero-left-marque:first-child {
+    flex: 0 0 50%;
+  }
+
+  .hero-container>.hero-content-box {
+    flex: 0 0 50%;
+  }
+
+  .hero-container>.hero-left-marque:last-child {
+    flex: 0 0 50%;
+  }
+
+  .hero-section {
+    height: 750px;
+  }
+
+  .mobile-hero-overlay {
+    display: block;
+  }
+
+  .hero-gmb-review {
+    display: none;
+  }
 }

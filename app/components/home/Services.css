@@ -1,0 +1,133 @@
+:root{
+    --btn-color: #FFC800;
+    --primary-color: #003566;
+    --secondary-color: #70ee9c;
+    --heading-color: #0b132b;
+    --black: #1D1616;
+}
+
+.services-card-icon{
+    background-color: var(--heading-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    svg{
+        width: 25px;
+        height: 25px;
+        fill: white;
+    }
+}
+.services-card-heading{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "DM Sans";
+}
+.services-card-description{
+    font-family: "Raleway";
+    font-weight: 500;
+    font-size: 16px;
+    color: #424242;
+    padding: 15px 0px 20px;
+}
+.services-card-cta h4{
+    background-color: var(--secondary-color);
+    color: var(--black);
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.services-card{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid #E4E4E4;
+    border-radius: 30px;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+.services-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+.services-card:hover::before {
+  opacity: 0.19; /* low opacity for background image */
+}
+
+/* Different background images per card */
+.card-bg-1::before {
+  background-image: url('/Images/web-development.jpg');
+}
+
+.card-bg-2::before {
+  background-image: url('/Images/uiux-designing.jpg');
+}
+
+.card-bg-3::before {
+  background-image: url('/Images/digital-marketing.jpg');
+}
+
+.card-bg-4::before {
+  background-image: url('/Images/branding.jpg');
+}
+
+.card-bg-5::before {
+  background-image: url('/Images/video-production.jpg');
+}
+
+.card-bg-6::before {
+  background-image: url('/Images/uiux-designing.jpg');
+}
+.services-card > * {
+  position: relative;
+  z-index: 1;
+}
+.services-card-cta {
+    display: flex;
+    justify-content: end;
+}
+.services-wrapper{
+    padding-top: 40px;
+}
+.services-header{
+    text-align: center;
+}
+.services-subheading{
+    font-size: 20px;
+    font-family: "DM Sans";
+    font-weight: 500;
+    color: #959595;
+}
+.services-heading{
+    font-size: 40px;
+    font-family: "DM Sans";
+    font-weight: 600;
+    color: var(--black);
+}
+.services-heading-highlight{
+    color: var(--secondary-color);
+}
+.services-card:hover .services-card-icon {
+  background-color: #70ee9c;
+  fill: black;
+}
+.services-card:hover .services-card-cta h4 {
+  background-color: #0B132B;
+  color: white;
+  rotate: 45deg;
+}

@@ -10,8 +10,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const AboutSection = () => {
   const wrapperRef = useRef(null);
-  const splitRef = useRef(null);
-  const tlRef = useRef(null);
 
 useEffect(() => {
   if (typeof window === 'undefined') return;
@@ -67,14 +65,14 @@ useEffect(() => {
 
 
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-container container mx-auto h-full px-5 md:px-12 lg:px-24">
         <div className="about-text-wrapper" ref={wrapperRef}>
           <h1 className="white">
             Meet Domain Dude—your creative powerhouse and digital growth partner.
             We transform brands through stunning web development, impactful marketing,
             and standout design, helping your business unlock new possibilities in the
-            digital world. Let's build something unforgettable together.
+            digital world. Lets build something unforgettable together.
           </h1>
         </div>
 

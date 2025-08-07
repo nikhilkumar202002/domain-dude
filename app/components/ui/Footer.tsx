@@ -1,7 +1,5 @@
 'use client'
 
-import { Button } from '@radix-ui/themes'
-import { MdArrowOutward } from "react-icons/md";
 import React from 'react'
 import './headerfooter.css';
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
