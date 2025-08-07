@@ -131,3 +131,11 @@
   color: white;
   rotate: 45deg;
 }
+
+/* media query */
+@media (max-width: 1080px) {
+  .services-heading{
+    font-size: 32px;
+    line-height: 38px;
+  }
+}

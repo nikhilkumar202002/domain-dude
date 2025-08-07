@@ -85,8 +85,8 @@ const MotionSlider: React.FC<{ reverse?: boolean; delay?: number }> = ({
       viewport={{ once: false, amount: 0.2 }}
     >
       {/* Gradient overlays */}
-      <div className="absolute left-0 top-0 h-full w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full w-32 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+      <div className="mobile-overlay absolute left-0 top-0 h-full w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+      <div className="mobile-overlay absolute right-0 top-0 h-full w-32 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
 
       <div
         onMouseEnter={() => swiperRef.current?.autoplay?.stop()}

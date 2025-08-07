@@ -143,7 +143,7 @@ const Header = () => {
               className="header-mobile-btn flex md:hidden rounded-full items-center gap-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              Menu <TbMenuDeep />
+              Menu 
             </Button>
           </div>
 

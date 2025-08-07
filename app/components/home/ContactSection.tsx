@@ -21,7 +21,7 @@ const ContactSection = () => {
 
      useEffect(() => {
     const ctx = gsap.context(() => {
-
+    
         // Animate each word in heading
     gsap.from('.heading-word', {
       y: 30,

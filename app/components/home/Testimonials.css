@@ -101,3 +101,13 @@
 .testimonial-section {
   overflow-x: hidden;
 }
+
+@media (max-width:1080px) {
+    .testimonial-subheadline{
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .mobile-overlay{
+        width: 18px;
+    }
+}
