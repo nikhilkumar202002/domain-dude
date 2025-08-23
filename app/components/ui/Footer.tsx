@@ -7,6 +7,8 @@ import { MdCopyright } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
 import Link from 'next/link';
+import "@fontsource/dm-sans";
+import "@fontsource/montserrat";  
 
 const Footer = () => {
   return (

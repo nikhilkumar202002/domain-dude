@@ -34,7 +34,7 @@
   width: 100%;
 }
 .header-btn{
-    background-color: #FFC800 !important;
+    background-color: var(--heading-color) !important;
     padding: 12px 32px;
     font-family: "Raleway";
     color: white;
@@ -45,7 +45,7 @@
 }
 
 .header-btn:hover{
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color) !important;
     transition: 500ms;
     color: var(--black);
 }

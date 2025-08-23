@@ -1,0 +1,150 @@
+:root {
+  --btn-color: #FFC800;
+  --primary-color: #003566;
+  --secondary-color: #70ee9c;
+  --heading-color: #0b132b;
+  --black: #1D1616;
+}
+.company-hero-heading{
+    font-size: 40px;
+    font-weight: 550;
+    font-weight: "Dm Sans";
+    color: var(--heading-color);
+}
+.company-hero-header{
+    padding: 100px 0px 60px;
+}
+.company-hero-heading-highlight{
+    color: var(--secondary-color);
+    font-weight: 650;
+}
+.company-hero-description{
+    font-size: 18px;
+    font-weight: 550;
+    color: var(--black);
+    font-family: "Montserrat";
+}
+.company-hero-bg{
+    position: relative;
+    background: url("../../../public/Images/company-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+    height: 600 !important;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    overflow: hidden;
+}
+.company-hero-bg::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+.company-hero-bg > * {
+    position: relative;
+    z-index: 2;
+}
+.company-hero-image-content{
+    position: relative;
+    z-index: 4; 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 80px;
+    h1{
+        font-size: 30px;
+        font-weight: 600;
+        font-family: "Dm Sans";
+        color: white;
+    }
+    p{
+        font-size: 16px;
+        color: rgb(219, 219, 219);
+        font-weight: 500;
+        font-family: "Montserrat";
+        width: 60%;
+    }
+}
+.company-service-section{
+    padding: 100px 0;
+}
+.company-product-logos{
+    width: 100%;
+}
+.company-product-logos img{
+    width: 100%;
+    max-width: 150px;
+    height: auto !important;
+    object-fit: contain;
+}
+.company-product-heading{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: "Dm Sans";
+    color: white;
+}
+.company-product-highlight{
+    color: var(--secondary-color);
+}
+.company-product-description{
+    font-size: 16px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: rgb(220, 220, 220);
+}
+.company-product{
+    background-color: var(--heading-color);
+    padding: 100px 0;
+}
+.company-product-cta{
+    padding: 12px 32px;
+    background-color: var(--secondary-color);
+    color: var(--black);
+    border-radius: 40px;
+    font-family: "Dm Sans";
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.company-setup{
+    padding: 100px 0;
+}
+.company-setup-image img{
+    border-radius: 30px;
+    height: 400px;
+    object-fit: cover;
+}
+.company-setup-content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.company-setup-content h1{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Dm Sans";
+}
+.company-setup-content-highlight{
+    color: var(--secondary-color);
+}
+.company-setup-content ul{
+    padding-top: 20px;
+}
+.company-setup-content ul li{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Montserrat";
+    padding: 8px;
+}
+.company-setup-icon{
+    font-size: 25px;
+    color: var(--secondary-color);
+}

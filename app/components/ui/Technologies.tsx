@@ -18,7 +18,7 @@ const Technologies = () => {
                       <Image src="/Tech/FIREBASE.png" width={100} height={0} alt="FIRE BASE" />
                       <Image src="/Tech/HTML5.png" width={100} height={0} alt="HTML5" />
                       <Image src="/Tech/LARAVEL.png" width={100} height={0} alt="ALARAVEL" />
-                      <Image src="/Tech/NEXTJS.PNG" width={100} height={0} alt="NEXT JS" />
+                      <Image src="/Tech/NEXTJS.png" width={100} height={0} alt="NEXT JS" />
                       <Image src="/Tech/PHP.png" width={100} height={0} alt="PHP" />
                       <Image src="/Tech/REACTJS.png" width={100} height={0} alt="REACTJS" />
                       <Image src="/Tech/SHOPIFY.png" width={100} height={0} alt="SHOPIFY" />
