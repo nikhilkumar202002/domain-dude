@@ -1,19 +1,21 @@
 import React from 'react';
 import CompanyHero from '../components/company/CompanyHero';
-import Services from '../components/home/Services';
 import "../components/company/CompanyStyles.css";
-import CompanyProducts from '../components/company/CompanyProducts';
-import CompanySetup from '../components/company/CompanySetup';
+import CompanyMarquee from '../components/company/CompanyMarquee';
+import CompanyAboutus from '../components/company/CompanyAboutus';
+import CompanyHistory from '../components/company/CompanyHistory';
+import OurTeam from '../components/company/OurTeam';
+import Testimonials from '../components/home/Testimonials';
 
 const page = () => {
   return (
     <>
-        <CompanyHero/>
-        <div className='company-service-section'>
-          <Services/>
-        </div>
-        <CompanyProducts/>
-        <CompanySetup/>
+      <CompanyHero/>
+      <CompanyMarquee/>
+      <CompanyAboutus/>
+      <CompanyHistory/>
+      <OurTeam/>
+      <Testimonials/>
     </>
   )
 }

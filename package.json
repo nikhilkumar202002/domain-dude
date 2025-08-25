@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.6",
+    "@fontsource/inter": "^5.2.6",
     "@fontsource/montserrat": "^5.2.6",
     "@fontsource/raleway": "^5.2.5",
     "@radix-ui/themes": "^3.2.1",
@@ -18,7 +19,7 @@
     "gsap": "^3.13.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.525.0",
-    "next": "15.3.3",
+    "next": "^15.5.0",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",

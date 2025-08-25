@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
-
+import './globals.css';
+import "@fontsource/inter";
 
 export const metadata: Metadata = {
   title: "Domain Dude | Full-Service Digital Agency for Web Design, Marketing & Branding",
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
          <Header/>
-        <main>{children}</main>
+        <main >{children}</main>
         <Footer/>
       </body>
     </html>

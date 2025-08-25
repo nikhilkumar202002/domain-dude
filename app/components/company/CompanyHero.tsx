@@ -1,36 +1,80 @@
+"use client";
 import React from 'react'
 import "./CompanyStyles.css"
 import "@fontsource/dm-sans";
 import "@fontsource/montserrat";
+import Image from 'next/image';
+import { Button } from '@radix-ui/themes';
+import { FiArrowUpRight } from "react-icons/fi";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.3 }
+  }
+};
 
 
 const CompanyHero = () => {
   return (
     <>
         <section className="company-hero">
-            <div className="company-hero-container container mx-auto h-full px-5 md:px-12 lg:px-24">
-                <div className="company-hero-header grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 px-6 md:px-10 lg:px-20 py-12">
-                    <div className="company-hero-left">
-                        <h1 className='company-hero-heading'>Hey <span className='company-hero-heading-highlight'>Dude!</span></h1>
-                    </div>
+      <div className="company-hero-container container mx-auto h-full px-5 md:px-12 lg:px-24">
+        
+        <motion.div 
+          className="company-hero-header"
+          initial="hidden"
+          animate="visible"
+          variants={container}
+        >
 
-                    <div className="company-hero-right">
-                        <p className='company-hero-description'>Welcome to Domain Dude — your digital playground where creativity, code, and strategy collide! Based in Kochi, Kerala, we are not your typical digital marketing agency. We are the team of digital rebels who love building brands that shine, websites that convert, and campaigns that trend.
+          <motion.h1 
+            className='company-hero-heading flex items-center gap-3'
+            variants={fadeInUp}
+          >
+            Hey Dudes!
+            <span className='company-hero-heading-highlight'>
+              <Image src="./Icons/marketing.svg" alt='Domain Dude' height={39} width={39}/>
+            </span>
+            We Make Brands Unstoppable!
+          </motion.h1>
 
-                        Whether you want to launch a killer website, create scroll-stopping designs, or make your brand viral, we have got you covered. At Domain Dude, we dont just deliver services — we craft digital experiences.</p>
-                    </div>
-                </div>
-            </div>
+          <motion.h1 
+            className='company-hero-heading company-hero-heading-mobile flex items-center'
+            variants={fadeInUp}
+          >
+            Hey Dudes!
+            <span className='company-hero-heading-highlight'>
+              <Image src="./Icons/marketing.svg" alt='Domain Dude' height={39} width={39}/>
+            </span>
+          
+            <p>We Make Brands Unstoppable!</p>
+          </motion.h1>
 
-            <div className="company-hero-image">
-                <div className="company-hero-bg">
-                    <div className="company-hero-image-content container mx-auto h-full px-5 md:px-12 lg:px-24">
-                        <h1>What Makes Us Different?</h1>
-                        <p>We don’t just follow trends. We set them. Our approach is simple: listen, create, launch, and win. Every pixel we design, every campaign we run, and every video we produce has one goal — making your brand unforgettable.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <motion.p 
+            className='company-hero-description'
+            variants={fadeInUp}
+          >
+            We blend creativity, strategy, and tech to make your business go BOOM!
+          </motion.p>
+
+          <motion.div 
+            className="company-hero-btns flex gap-3"
+            variants={fadeInUp}
+          >
+            <Button className='company-hero-btn-first flex gap-2 items-center'>
+              Lets Grow Together <FiArrowUpRight/>
+            </Button>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
     </>
   )
 }

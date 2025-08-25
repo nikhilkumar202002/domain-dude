@@ -8,71 +8,51 @@ import Image from 'next/image';
 import './headerfooter.css';
 import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
-import "@fontsource/dm-sans";
-import "@fontsource/montserrat";
+import { FaCode, FaPaintBrush, FaBullhorn, FaTrademark, FaVideo, FaPencilRuler } from "react-icons/fa";
 
-const servicesMegaMenu = [
+const servicesDropdown = [
   {
-    title: "Web Development",
-    items: [
-      { label: "Corporate Websites", href: "/services/web-development/corporate" },
-      { label: "E-commerce Platforms", href: "/services/web-development/ecommerce" },
-      { label: "Web Apps", href: "/services/web-development/apps" },
-      { label: "Maintenance & Support", href: "/services/web-development/support" },
-    ],
+    label: "Web Development",
+    href: "/services/web-development",
+    icon: <FaCode />,
+    description: "Build fast, secure, and responsive websites."
   },
   {
-    title: "UI/UX Design",
-    items: [
-      { label: "User Research", href: "/services/ui-ux/research" },
-      { label: "Wireframing", href: "/services/ui-ux/wireframing" },
-      { label: "Prototyping", href: "/services/ui-ux/prototyping" },
-      { label: "Usability Testing", href: "/services/ui-ux/testing" },
-    ],
+    label: "UI/UX Design",
+    href: "/services/ui-ux",
+    icon: <FaPaintBrush />,
+    description: "Create seamless and engaging user experiences."
   },
   {
-    title: "Digital Marketing",
-    items: [
-      { label: "SEO", href: "/services/digital-marketing/seo" },
-      { label: "SEM", href: "/services/digital-marketing/sem" },
-      { label: "Social Media Marketing", href: "/services/digital-marketing/social-media" },
-      { label: "Email Campaigns", href: "/services/digital-marketing/email" },
-    ],
+    label: "Digital Marketing",
+    href: "/services/digital-marketing",
+    icon: <FaBullhorn />,
+    description: "Boost your brand visibility and online presence."
   },
   {
-    title: "Branding",
-    items: [
-      { label: "Logo Design", href: "/services/branding/logo" },
-      { label: "Brand Strategy", href: "/services/branding/strategy" },
-      { label: "Visual Identity", href: "/services/branding/identity" },
-      { label: "Brand Guidelines", href: "/services/branding/guidelines" },
-    ],
+    label: "Branding",
+    href: "/services/branding",
+    icon: <FaTrademark />,
+    description: "Craft a strong and unique brand identity."
   },
   {
-    title: "Video Production",
-    items: [
-      { label: "Promo Videos", href: "/services/video-production/promo" },
-      { label: "Animation", href: "/services/video-production/animation" },
-      { label: "Corporate Videos", href: "/services/video-production/corporate" },
-      { label: "Editing Services", href: "/services/video-production/editing" },
-    ],
+    label: "Video Production",
+    href: "/services/video-production",
+    icon: <FaVideo />,
+    description: "Produce stunning and impactful visual content."
   },
   {
-    title: "Graphics Design",
-    items: [
-      { label: "Posters & Flyers", href: "/services/graphics/posters" },
-      { label: "Infographics", href: "/services/graphics/infographics" },
-      { label: "Digital Illustrations", href: "/services/graphics/illustrations" },
-      { label: "Packaging", href: "/services/graphics/packaging" },
-    ],
+    label: "Graphics Design",
+    href: "/services/graphics",
+    icon: <FaPencilRuler />,
+    description: "Design eye-catching graphics that stand out."
   },
 ];
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isSticky,     setIsSticky]     = useState(false);
-  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
-
+  const [isSticky, setIsSticky] = useState(false);
+  const [serviceMenuOpen, setServiceMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,24 +70,69 @@ const Header = () => {
         {/* wrap nav and mega-menu in one relative container */}
         <div
           className="container relative mx-auto flex items-center justify-between h-full px-5 md:px-12 lg:px-24"
-          onMouseLeave={() => setMegaMenuOpen(false)}
         >
           {/* LEFT LINKS */}
-          <ul className="header-menu-list hidden md:flex items-center gap-8">
+          <ul className="header-menu-list hidden md:flex items-center gap-5">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/company">Company</Link></li>
 
             <li
-              className="group relative"
-              onMouseEnter={() => setMegaMenuOpen(true)}
+              className="relative group"
+              onMouseEnter={() => setServiceMenuOpen(true)}
+              onMouseLeave={() => setServiceMenuOpen(false)}
             >
-              <Link href="/services" className="flex items-center gap-1">
-                Service
-                <span className="header-service-arrow transition-transform duration-300 group-hover:rotate-180">
-                  <MdArrowOutward />
+              {/* Services Button */}
+              <button className="flex items-center gap-1">
+                Services
+                <span
+                  className={`header-service-arrow transition-transform duration-300 ${serviceMenuOpen ? 'rotate-180' : ''
+                    }`}
+                >
+                  <GoArrowUpRight />
                 </span>
-              </Link>
+              </button>
+
+              <ul
+                className={`header-service-dropdown absolute left-0 top-full mt-8 bg-white shadow-md rounded-md w-[600px] z-50 transition-all duration-300 flex gap-6 ${serviceMenuOpen
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
+                  }`}
+                onMouseEnter={() => setServiceMenuOpen(true)}
+                onMouseLeave={() => setServiceMenuOpen(false)}
+              >
+
+                <div className="dropdown-services w-1/2">
+                  {servicesDropdown.map((service, index) => (
+                    <li
+                      key={index}
+                      className="dropdown-item mb-3 last:mb-0"
+                    >
+                      <a href={service.href} className="flex gap-3 items-start hover:text-blue-600 transition-colors">
+                        <span className="text-lg">{service.icon}</span>
+                        <div>
+                          <h4 className="font-semibold">{service.label}</h4>
+                          <p className="text-sm text-gray-500">{service.description}</p>
+                        </div>
+                      </a>
+                    </li>
+                  ))}
+                </div>
+
+                <div className="dropdown-item-images w-1/2 flex items-start justify-center">
+                <div className="dropdown-item-image">
+                   <Image
+                    src="./Services/web-development.jpg"
+                    alt="Service Preview"
+                    width={250}
+                    height={200}
+                    className=" object-cover"
+                  />
+                </div>
+                 
+                </div>
+              </ul>
             </li>
+
 
             <li><Link href="/portfolio">Portfolio</Link></li>
             <li><Link href="/case-studies">Case Studies</Link></li>
@@ -115,25 +140,26 @@ const Header = () => {
 
           {/* LOGO */}
           <div
-      className="menu-logo"
-      style={{ cursor: 'pointer' }}
-    >
-      <Link href="/">
-          <Image
-            src="/main-logo.png"
-            alt="Domain Dude Logo"
-            width={80}
-            height={30}
-          />
-      </Link>
-    </div>
+            className="menu-logo"
+            style={{ cursor: 'pointer' }}
+          >
+            <Link href="/">
+
+              <Image
+                src="/main-logo.png"
+                alt="Domain Dude Logo"
+                width={80}
+                height={30}
+              />
+
+            </Link>
+          </div>
 
           {/* RIGHT ACTIONS */}
           <div className="flex items-center gap-3">
             <div className='header-login-signup flex gap-3'>
-              
               <Button className="header-btn hidden md:flex rounded-full items-center gap-2">
-                Contact Us <MdArrowOutward />
+                Get a quote <MdArrowOutward />
               </Button>
             </div>
 
@@ -154,47 +180,6 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* MEGA‑MENU */}
-          {megaMenuOpen && (
-            <div
-              className={`mega-menu-container absolute inset-x-0 top-full bg-white z-40
-              ${megaMenuOpen ? 'block' : 'hidden'}`}
-  onMouseEnter={() => setMegaMenuOpen(true)}
-            >
-              <div className="container mx-auto px-8 py-6 lg:px-24">
-                <div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-8">
-                  {/* Left: service lists */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
-                    {servicesMegaMenu.map((col) => (
-                      <div key={col.title} className="mega-menu-items-list">
-                        <h1>{col.title}</h1>
-                        <ul className="list-inside space-y-1">
-                          {col.items.map((item) => (
-                            <li key={item.label}>
-                              <Link href={item.href} className='flex items-center gap-2'><span className='mega-menu-arrow '><GoArrowUpRight/></span>{item.label}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Right: portfolio image */}
-                  <div className="mega-menu-portfolio-slide border-l border-gray-300 pl-6">
-                    <Image
-                      src="/Portfolio/MOCKUP-1.jpg"
-                      alt="Portfolio sample"
-                      width={300}
-                      height={400}
-                      className="object-cover w-full h-auto"
-                    />
-
-                  
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 

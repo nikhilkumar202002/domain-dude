@@ -12,9 +12,18 @@
     width: 100px;
 }
 .header-menu-list li a{
-    font-family: "Raleway";
+    font-family: "Inter";
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.header-menu-list li button{
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
     position: relative;
     text-decoration: none;
     color: black;
@@ -23,7 +32,7 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px; /* Adjust spacing */
+    bottom: -5px; 
     width: 0%;
     height: 1.5px;
     background-color: black;
@@ -36,18 +45,50 @@
 .header-btn{
     background-color: var(--heading-color) !important;
     padding: 12px 32px;
-    font-family: "Raleway";
+    font-family: "Inter";
     color: white;
     font-weight: 600;
+}
+.header-service-dropdown{
+    width: 680px;
+}
+.dropdown-item-images{
+    background-color: #f3f3f3 !important;
+    margin: 10px;
+    border-radius: 6px;
+    padding: 10px;
+    img{
+        border-radius: 4px;
+        width: 100%;
+    }
+}
+.dropdown-item-text{
+    font-size: 14px;
+    font-weight: 400;
+}
+.header-service-dropdown li{
+    padding: 10px;
+    margin: 10px;
+}
+.header-service-dropdown li:hover{
+    background-color: #f7f7f7;
+}
+.header-service-dropdown li a{
+    font-size: 14px;
+}
+.header-service-dropdown li a::after{
+    display: none;
 }
 .header-btn-icon{
     font-size: 20px;
 }
-
 .header-btn:hover{
     background-color: var(--secondary-color) !important;
     transition: 500ms;
     color: var(--black);
+}
+.dropdown-item-icon{
+    padding-top: 4px;
 }
 .header-service-arrow{
     background-color: #70EE9C;
@@ -56,6 +97,7 @@
     padding: 2px;
     font-size: 12px;
 }
+
 .header-mobile-btn{
     display: none;
     align-items: center;
@@ -63,7 +105,7 @@
     background-color: var(--btn-color);
     padding: 8px 20px;
     color: white;
-    font-family: "Raleway";
+    font-family: "Inter";
     font-size: 14px;
     font-weight: 600;
     border-radius: 9999px;
@@ -153,14 +195,14 @@
 /* Text Styling */
 .footer-subscribe-heading {
   font-size: 40px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   color: white;
 }
 
 .footer-subscribe-content {
   font-weight: 500;
-  font-family: "Raleway", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   color: white;
 }
@@ -190,7 +232,7 @@
 .subscribe-btn {
   background-color: var(--btn-color);
   color: white;
-  font-family: "Raleway", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   padding: 10px 20px;
@@ -206,25 +248,25 @@
 .footer-about-content{
     font-size: 14px;
     color: rgb(189, 189, 189);
-    font-family: "Raleway";
+    font-family: "Inter";
     font-weight: 500;
     padding-top: 10px;
 }
 .footer-menu-list ul li{
     font-size: 16px;
-    font-family: "Raleway";
+    font-family: "Inter";
     font-weight: 600;
     padding: 6px;
 }
 .footer-menu-list ul li a{
     font-weight: 500;
-    font-family: "Raleway";
+    font-family: "Inter";
     font-size: 14px;
     color: rgb(206, 206, 206);
 }
 .footer-social-icons h1{
     font-size: 16px;
-    font-family: "Raleway";
+    font-family: "Inter";
     font-weight: 600;
     padding-top: 15px;
 }
@@ -238,7 +280,7 @@
 }
 .footer-copyright-content p{
     font-size: 14px;
-    font-family: "Raleway";
+    font-family: "Inter";
 }
 .footer-copyright-container{
     border-top: 1px solid rgba(124, 124, 124, 0.575);
@@ -285,7 +327,7 @@
 .mega-menu-items-list ul li{
     font-size: 15px;
     color: #363636;
-    font-family: "Raleway";
+    font-family: "Inter";
     font-weight: 500;
 }
 .mega-menu-items-list ul li:hover{

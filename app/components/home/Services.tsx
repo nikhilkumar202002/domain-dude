@@ -2,6 +2,7 @@ import React from 'react'
 import "./Services.css"
 import Link from 'next/link'
 import { MdOutlineArrowOutward } from "react-icons/md";
+import Image from 'next/image';
 
 const Services = () => {
 
@@ -11,10 +12,7 @@ const Services = () => {
       description:
         "We create custom, responsive, and SEO-friendly websites tailored to your business. From corporate sites to eCommerce and web apps, we deliver fast, user-focused, high-performance web solutions.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="website" className="w-8 h-8">
-          <path d="M47 40h-1V15a3 3 0 0 0-3-3h-3V3a3 3 0 0 0-3-3H11a3 3 0 0 0-3 3v9H5a3 3 0 0 0-3 3v25H1a1 1 0 0 0-1 1v2a5 5 0 0 0 5 5h38a5 5 0 0 0 5-5v-2a1 1 0 0 0-1-1ZM10 8h28v23a1 1 0 0 1-1 1H11a1 1 0 0 1-1-1Zm0-5a1 1 0 0 1 1-1h26a1 1 0 0 1 1 1v3H10ZM4 15a1 1 0 0 1 1-1h3v17a3 3 0 0 0 3 3h26a3 3 0 0 0 3-3V14h3a1 1 0 0 1 1 1v25c-16 0-15.5-.23-15.89.55L27.38 42h-6.76c-.81-1.61-.88-2-1.62-2H4Zm42 28a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-1h16.38c.81 1.61.88 2 1.62 2 8.62 0 8.52.2 8.89-.55l.73-1.45H46Z"></path>
-          <path d="M13 3a1 1 0 0 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 0 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 0 0 0 2 1 1 0 0 0 0-2zm3 27a10 10 0 1 0-10-10 10 10 0 0 0 10 10zm-7.93-9h4a14.24 14.24 0 0 0 2 6.74 8 8 0 0 1-6-6.74zM24 12.88A11.78 11.78 0 0 1 26 19h-4a11.78 11.78 0 0 1 2-6.12zM26 21a11.78 11.78 0 0 1-2 6.12A11.78 11.78 0 0 1 22 21zm0 6.74A14.24 14.24 0 0 0 28 21h4a8 8 0 0 1-6 6.74zM31.93 19H28a14.24 14.24 0 0 0-2-6.74A8 8 0 0 1 31.93 19zM22 12.26A14.24 14.24 0 0 0 20 19h-4a8 8 0 0 1 6-6.74z"></path>
-        </svg>
+        <Image src="./Icons/web.svg" alt='Web Development' width={25} height={25}/>
       ),
     },
     {

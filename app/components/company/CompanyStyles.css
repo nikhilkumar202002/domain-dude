@@ -4,147 +4,408 @@
   --secondary-color: #70ee9c;
   --heading-color: #0b132b;
   --black: #1D1616;
+  --grey-bg: #F8F8F8;
 }
+
+/* hero section styles */
+
 .company-hero-heading{
-    font-size: 40px;
-    font-weight: 550;
-    font-weight: "Dm Sans";
+    font-size: 35px;
+    font-weight: 700;
     color: var(--heading-color);
-}
-.company-hero-header{
-    padding: 100px 0px 60px;
+    font-family: "Dm Sans";
 }
 .company-hero-heading-highlight{
-    color: var(--secondary-color);
-    font-weight: 650;
-}
-.company-hero-description{
-    font-size: 18px;
-    font-weight: 550;
-    color: var(--black);
-    font-family: "Montserrat";
-}
-.company-hero-bg{
-    position: relative;
-    background: url("../../../public/Images/company-banner.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    width: 100%;
-    height: 600 !important;
+    background-color: var(--secondary-color);
+    width: 68px;
+    height: 68px;
     display: flex;
-    align-items: end;
-    justify-content: end;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px !important;
+    text-align: center;
 }
-.company-hero-bg::before{
-    content: "";
+.company-hero-heading-highlight img {
+    animation: floatUpDown 2s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.company-hero-description{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Inter";
+    color: #424242;
+    width: 30%;
+    text-align: center;
+    padding-top: 10px;
+}
+.company-hero-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.company-hero-btn-first{
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    border: 1px solid var(--secondary-color);
+}
+.company-hero-btn-first:hover{
+    background-color: transparent;
+    transition: 500ms;
+}
+.company-hero-btn-second{
+    color: var(--heading-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    background-color: var(--heading-color);
+    color: white;
+    
+}
+.company-hero-btn-second:hover{
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    transition: 500ms;
+}
+.company-hero-btns{
+    padding-top: 30px;
+}
+.company-hero{
+    padding: 100px 0px;
+}
+
+/* marquee slider animation */
+
+
+.company-marquee {
+  width: 100%;
+  overflow: hidden;
+ background-color: var(--grey-bg);
+    padding: 8px 0px;
+}
+
+.company-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.company-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+.company-marquee-item {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-family: "Dm Sans";
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 6px;
+  white-space: nowrap;
+}
+
+.company-marquee-icon {
+  color: var(--secondary-color);
+  font-size: 15px;
+  margin-left: 12px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* about us section */
+
+.company-aboutus-heading{
+    font-size: 40px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    color: var(--heading-color);
+}
+.company-aboutus-highlight{
+    color: var(--secondary-color);
+}
+.company-aboutus-description{
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500 !important;
+    color: #6b6b6b;
+    text-align: justify;
+    padding-top: 15px;
+    line-height: 26px;
+}
+
+.company-aboutus-cta{
+    background-color: var(--heading-color);
+    color: white;
+    font-family: "Dm Sans";
+    font-size: 16px;
+    font-weight: 600;   
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 40px;
+}
+.company-aboutus-cta:hover{
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    transition: 500ms;
+}
+.company-aboutus{
+    padding: 100px 0px;
+}
+.company-aboutus-video video{
+    width: 85%;
+    height: 600px;
+    object-fit: cover;
+    overflow: hidden !important;
+    border-radius: 30px;
+}
+
+
+.company-aboutus-video {
+  width: 100%;
+  display: flex;           /* Center the video */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;        /* Hide overflowed content */
+  border-radius: 1rem;     /* Optional: soft corners, match your design */
+}
+
+.company-aboutus-video video {
+  width: 100%;
+  max-width: 100%;
+height: 600px !important;          /* Adjust max-height as needed */
+  object-fit: cover;         /* Crop overflow, fills container */
+  border-radius: 1rem;       /* Same as container if needed */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1); /* Optional, for a nice effect */
+}
+.company-aboutus-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+/* company history styles */
+
+.company-history{
+    padding: 100px 100px;
+    background-color: #F8F8F8;
+}
+.company-history-heading{
+    font-size: 40px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    color: var(--heading-color);
+}
+.company-history-heading-highlight{
+    color: var(--secondary-color);
+}
+.company-history-descriptioin{
+    font-size: 20px;
+    font-weight: 400;
+    color: #6b6b6b;
+    padding-top: 15px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+/* Our team style */
+
+.our-team{
+    padding: 100px 0px 0px;
+}
+.our-team-header{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.our-team-heading{
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "Dm Sans";
+    color: var(--heading-color);
+}
+.our-team-description{
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Inter";
+    width: 45%;
+    color: #686868;
+}
+.our-team-heading-highlight{
+    color: var(--secondary-color);
+}
+
+.our-team-card {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.our-team-card:hover {
+    transform: translateY(-5px);
+}
+
+.our-team-card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.our-team-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.our-team-card:hover .our-team-card-image img {
+    transform: scale(1.05);
+}
+
+/* Black gradient overlay from bottom to top */
+.our-team-card-image::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     z-index: 1;
+    transition: background 0.3s ease;
 }
-.company-hero-bg > * {
-    position: relative;
-    z-index: 2;
+
+/* Content styling */
+.our-team-card-content {
+    position: absolute;
+    bottom: 35px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    text-align: center;
+    z-index: 2; /* Keeps content above overlay */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    line-height: 10px;
 }
-.company-hero-image-content{
-    position: relative;
-    z-index: 4; 
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    padding-bottom: 80px;
-    h1{
-        font-size: 30px;
-        font-weight: 600;
-        font-family: "Dm Sans";
-        color: white;
+
+.our-team-card-heading {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Dm Sans";
+    margin: 0;
+}
+
+.our-team-card-position {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 4px 0 0;
+    opacity: 0.85;
+    color: var(--secondary-color);
+}
+
+/* Optional hover effect on content */
+.our-team-card:hover .our-team-card-content {
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
+.our-team-swiper {
+  padding: 50px 0px !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #888 !important;
+  opacity: 0.7;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #22c55e !important; /* Green highlight */
+  transform: scale(1.2);
+}
+.company-hero-heading-mobile{
+    display: none;
+}
+/* media query */
+
+@media (max-width:1024px) {
+    .company-hero-heading-mobile{
+        display: block !important;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        
     }
-    p{
+    .company-hero-heading{
+        display: none;
+    }
+    .company-hero-heading-highlight{
+        margin: 0 auto;
+    }
+    .company-hero-description,.our-team-description{
+        width: 100%;
+    }
+    .company-hero,.company-aboutus,.company-history,.our-team {
+        padding: 50px 0px;
+    }
+    .company-aboutus-video video{
+        height: 300px !important;
+    }
+    .company-aboutus-flex{
+        row-gap: 50px;
+    }
+    .company-aboutus-heading,.company-history-heading{
+        font-size: 28px;
+    }
+    .company-history-descriptioin{
         font-size: 16px;
-        color: rgb(219, 219, 219);
-        font-weight: 500;
-        font-family: "Montserrat";
-        width: 60%;
+        line-height: 24px;
     }
-}
-.company-service-section{
-    padding: 100px 0;
-}
-.company-product-logos{
-    width: 100%;
-}
-.company-product-logos img{
-    width: 100%;
-    max-width: 150px;
-    height: auto !important;
-    object-fit: contain;
-}
-.company-product-heading{
-    font-size: 40px;
-    font-weight: 600;
-    font-family: "Dm Sans";
-    color: white;
-}
-.company-product-highlight{
-    color: var(--secondary-color);
-}
-.company-product-description{
-    font-size: 16px;
-    font-family: "Montserrat";
-    font-weight: 500;
-    color: rgb(220, 220, 220);
-}
-.company-product{
-    background-color: var(--heading-color);
-    padding: 100px 0;
-}
-.company-product-cta{
-    padding: 12px 32px;
-    background-color: var(--secondary-color);
-    color: var(--black);
-    border-radius: 40px;
-    font-family: "Dm Sans";
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-.company-setup{
-    padding: 100px 0;
-}
-.company-setup-image img{
-    border-radius: 30px;
-    height: 400px;
-    object-fit: cover;
-}
-.company-setup-content{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-}
-.company-setup-content h1{
-    font-size: 30px;
-    font-weight: 600;
-    font-family: "Dm Sans";
-}
-.company-setup-content-highlight{
-    color: var(--secondary-color);
-}
-.company-setup-content ul{
-    padding-top: 20px;
-}
-.company-setup-content ul li{
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "Montserrat";
-    padding: 8px;
-}
-.company-setup-icon{
-    font-size: 25px;
-    color: var(--secondary-color);
+    .our-team-heading{
+        font-size: 28px;
+        width: 70%;
+        line-height: 30px;
+        padding-bottom: 6px;
+    }
 }
