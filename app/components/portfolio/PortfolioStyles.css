@@ -1,0 +1,152 @@
+:root {
+  --btn-color: #FFC800;
+  --primary-color: #003566;
+  --secondary-color: #70ee9c;
+  --heading-color: #0b132b;
+  --black: #1D1616;
+  --grey-bg: #F8F8F8;
+}
+
+/* hero section styles */
+
+.portfolio-hero-heading{
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--heading-color);
+    font-family: "Dm Sans";
+}
+.portfolio-hero-heading-highlight{
+    font-size: 35px !important;
+    text-align: center;
+    color: var(--secondary-color);
+}
+.portfolio-hero-sub-heading{
+    font-size: 20px;
+    font-family: "Inter";
+    font-weight: 600;
+    color: #494949;
+}
+
+.portfolio-hero-description{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Inter";
+    color: #424242;
+    width: 60%;
+    text-align: center;
+    padding-top: 10px;
+}
+.portfolio-hero-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio-hero-btn-first{
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    border: 1px solid var(--secondary-color);
+}
+.portfolio-hero-btn-first:hover{
+    background-color: transparent;
+    transition: 500ms;
+}
+.portfolio-hero-btn-second{
+    color: var(--heading-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: "Dm Sans";
+    font-weight: 600;
+    background-color: var(--heading-color);
+    color: white;
+    
+}
+.portfolio-hero-btn-second:hover{
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    transition: 500ms;
+}
+.portfolio-hero-btns{
+    padding-top: 30px;
+}
+.portfolio-hero{
+    padding: 100px 0px;
+}
+
+/* Marquee */
+
+.portfolio-marquee {
+  width: 100%;
+  overflow: hidden;
+ background-color: var(--grey-bg);
+    padding: 8px 0px;
+}
+
+.portfolio-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+.portfolio-marquee-item {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-family: "Dm Sans";
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 6px;
+  white-space: nowrap;
+}
+
+.portfolio-marquee-icon {
+  color: var(--secondary-color);
+  font-size: 15px;
+  margin-left: 12px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Portfolio Grid */
+
+.portfolio-section{
+    padding: 100px 0px;
+}
+.portfolio-card{
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 30px;
+    width: 100%;
+    height: 700px;
+}
+.portfolio-image{
+    width: 100%;
+    height: 600px;
+}
+.portfolio-image img{
+    border-radius: 25px;
+    height: 600px;
+    object-fit: cover;
+}
+.portfolio-image-heading{
+    font-size: 22px;
+    font-weight: 600;
+}
