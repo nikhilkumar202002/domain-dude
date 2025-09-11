@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { MdArrowOutward } from "react-icons/md";
+import "./PortfolioStyles.css"
 
 const PortfolioGrid = () => {
   return (
@@ -26,7 +27,7 @@ const PortfolioGrid = () => {
                             </div>
 
                             <div className="portfolio-image-header">
-                                <h1 className='portfolio-image-heading'>Ayursiddhi - Wellness Ayurcedic Centre</h1>
+                                <h1 className='portfolio-image-heading'>Lab 8 - Achritecture & Design</h1>
                                 <span className='portfolio-image-icon'><MdArrowOutward/></span>
                             </div>
                         </div>
@@ -37,7 +38,7 @@ const PortfolioGrid = () => {
                             </div>
 
                             <div className="portfolio-image-header">
-                                <h1 className='portfolio-image-heading'>Ayursiddhi - Wellness Ayurcedic Centre</h1>
+                                <h1 className='portfolio-image-heading'>Paddle Boat - Digital Marketing agency</h1>
                                 <span className='portfolio-image-icon'><MdArrowOutward/></span>
                             </div>
                         </div>
@@ -48,7 +49,7 @@ const PortfolioGrid = () => {
                             </div>
 
                             <div className="portfolio-image-header">
-                                <h1 className='portfolio-image-heading'>Ayursiddhi - Wellness Ayurcedic Centre</h1>
+                                <h1 className='portfolio-image-heading'>Pantry India - Your Cooking Partner</h1>
                                 <span className='portfolio-image-icon'><MdArrowOutward/></span>
                             </div>
                         </div>
@@ -59,7 +60,7 @@ const PortfolioGrid = () => {
                             </div>
 
                             <div className="portfolio-image-header">
-                                <h1 className='portfolio-image-heading'>Ayursiddhi - Wellness Ayurcedic Centre</h1>
+                                <h1 className='portfolio-image-heading'>TheBridgate - Business Consultant</h1>
                                 <span className='portfolio-image-icon'><MdArrowOutward/></span>
                             </div>
                         </div>
@@ -70,7 +71,7 @@ const PortfolioGrid = () => {
                             </div>
 
                             <div className="portfolio-image-header">
-                                <h1 className='portfolio-image-heading'>Ayursiddhi - Wellness Ayurcedic Centre</h1>
+                                <h1 className='portfolio-image-heading'>Visamaya - Wedding Photography</h1>
                                 <span className='portfolio-image-icon'><MdArrowOutward/></span>
                             </div>
                         </div>
@@ -81,7 +82,7 @@ const PortfolioGrid = () => {
                             </div>
 
                             <div className="portfolio-image-header">
-                                <h1 className='portfolio-image-heading'>Ayursiddhi - Wellness Ayurcedic Centre</h1>
+                                <h1 className='portfolio-image-heading'>Yana - Spare part agency</h1>
                                 <span className='portfolio-image-icon'><MdArrowOutward/></span>
                             </div>
                         </div>
